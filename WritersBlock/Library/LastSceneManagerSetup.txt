@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/sample level.unity
+- path: Assets/Scenes/queen eating.unity
   isLoaded: 1
   isActive: 1

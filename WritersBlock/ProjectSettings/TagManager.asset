@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Word
+=======
+  - Ground
+>>>>>>> 9931873fcb1f7960fef2e3d1ec0b083c23c9926d
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,11 @@ TagManager:
   - 
   - 
   - PostProcessing
+<<<<<<< HEAD
   - 
+=======
+  - Ground
+>>>>>>> 9931873fcb1f7960fef2e3d1ec0b083c23c9926d
   - 
   - 
   - 
@@ -39,6 +47,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+<<<<<<< HEAD
   - name: Background
     uniqueID: 375044255
     locked: 0
@@ -48,3 +57,8 @@ TagManager:
   - name: Front
     uniqueID: 1851593779
     locked: 0
+=======
+  - name: Default
+    uniqueID: 0
+    locked: 0
+>>>>>>> 9931873fcb1f7960fef2e3d1ec0b083c23c9926d

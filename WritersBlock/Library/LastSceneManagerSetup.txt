@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/WordTestScene.unity
+=======
+- path: Assets/Scenes/queen eating.unity
+>>>>>>> 9931873fcb1f7960fef2e3d1ec0b083c23c9926d
   isLoaded: 1
   isActive: 1

@@ -13,8 +13,7 @@ public class WordDraggable : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        controller.SetInSentence(false);
-
+        controller.InSentence = false;
     }
 
     private void OnMouseDrag()

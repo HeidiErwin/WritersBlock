@@ -5,31 +5,12 @@ using UnityEngine;
 public class WordController : MonoBehaviour {
 
     public string text;
-    public bool swappable;
 
-    private bool inSentence;
+    public bool InSentence { get; set; }
 
-    private WordDraggable dragScript;
-
-    private void Start()
+    public string GetText()
     {
-        inSentence = false;
-        dragScript = GetComponent<WordDraggable>();
-    }
-
-    public bool CheckText(string otherText)
-    {
-        return this.text.Equals(otherText);
-    }
-
-    public void SetInSentence(bool isIn)
-    {
-        this.inSentence = isIn;
-    }
-
-    public bool GetInSentence()
-    {
-        return inSentence;
+        return this.text;
     }
 
 }

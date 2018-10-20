@@ -9,9 +9,17 @@ public class SentenceController : MonoBehaviour {
 
     private void Start()
     {
-        blanks = new SentenceBlankController[numBlanks];
+        blanks = GetComponentsInChildren<SentenceBlankController>();
     }
 
-
+    public string[] GetWords()
+    {
+        string[] wordText = new string[blanks.Length];
+        for (int i = 0; i < blanks.Length; i++)
+        {
+            wordText[i] = blanks[i].GetText();
+        }
+        return wordText;
+    }
 
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Prototype_Level.unity
+- path: Assets/Scenes/WordTestScene.unity
   isLoaded: 1
   isActive: 1

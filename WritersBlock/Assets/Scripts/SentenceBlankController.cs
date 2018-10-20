@@ -8,7 +8,7 @@ public class SentenceBlankController : MonoBehaviour {
 
     private void Update()
     {
-        if(word && !word.GetInSentence())
+        if(word && !word.InSentence)
         {
             word = null;
         }
@@ -16,15 +16,22 @@ public class SentenceBlankController : MonoBehaviour {
 
     public void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("colliding");
         if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0))
         {
             WordController colliderWord = collision.transform.GetComponent<WordController>();
-            if (colliderWord.CheckText("key"))
-            {
-                word = colliderWord;
-                word.SetInSentence(true);
-                word.transform.position = this.transform.position;
-            }
+            word = colliderWord;
+            word.InSentence = true;
+            word.transform.position = this.transform.position;
+        }
+    }
+
+    public string GetText()
+    {
+        if (word != null) {
+            return word.GetText();
+        } else {
+            return "";
         }
     }
 

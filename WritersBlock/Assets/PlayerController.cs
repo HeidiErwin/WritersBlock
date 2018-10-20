@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour {
 
     private bool facingRight = true;
     private bool jump = false;
-    private float moveForce = 365f;
-    private float maxSpeed = 1.5f;
+    private float moveForce = 100f;
+    private float maxSpeed = 0.3f;
     private float jumpForce = 365f;
     private bool inventoryLeft = true;
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour {
             Flip();
         if (!IsGrounded())
         {
-            h = 0f;
+            //h = 0f;
         }
 
         anim.SetFloat("Speed", Mathf.Abs(h));

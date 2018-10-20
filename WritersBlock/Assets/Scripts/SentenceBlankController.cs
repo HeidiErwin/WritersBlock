@@ -16,7 +16,6 @@ public class SentenceBlankController : MonoBehaviour {
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("colliding");
         if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0))
         {
             WordController colliderWord = collision.transform.GetComponent<WordController>();

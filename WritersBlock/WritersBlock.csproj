@@ -309,6 +309,7 @@
     <Compile Include="Assets\about.cs" />
     <Compile Include="Assets\dostuff.cs" />
     <Compile Include="Assets\exit.cs" />
+    <Compile Include="Assets\Scripts\InventoryController.cs" />
     <Compile Include="Assets\Scripts\SentenceBlankController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinator.cs" />

@@ -13,7 +13,14 @@ public class WordDraggable : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        gameObject.layer = 10;
         controller.InSentence = false;
+        this.transform.parent = null;
+    }
+
+    private void OnMouseUp()
+    {
+        gameObject.layer = 9;
     }
 
     private void OnMouseDrag()

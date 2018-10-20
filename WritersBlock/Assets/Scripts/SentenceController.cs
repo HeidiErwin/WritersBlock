@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SentenceController : MonoBehaviour {
 
-    public int numBlanks;
     private SentenceBlankController[] blanks;
 
     private void Start()

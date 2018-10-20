@@ -7,6 +7,6 @@ public class start_prototype : MonoBehaviour {
 
 public void doStart()
     {
-        SceneManager.LoadScene("Prototype_Level");
+        SceneManager.LoadScene("Level1");
     }
 }

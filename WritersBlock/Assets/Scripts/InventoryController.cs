@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour {
 
-    public List<WordController> contents = new List<WordController>();
+    private List<WordController> contents = new List<WordController>();
 
     public void OnTriggerStay2D(Collider2D collision)
     {

@@ -309,6 +309,18 @@
     <Compile Include="Assets\about.cs" />
     <Compile Include="Assets\dostuff.cs" />
     <Compile Include="Assets\exit.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MBComplexPage.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookBendMod.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookBuilder.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookControl.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookDynamicMesh.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookMatrix.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookMouseControl.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookPage.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookPageAttach.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\MegaBookVisible.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\TextMeshProMesh.cs" />
+    <Compile Include="Assets\MegaBook\Scripts\TypogenicMesh.cs" />
     <Compile Include="Assets\Scripts\InventoryController.cs" />
     <Compile Include="Assets\Scripts\SentenceBlankController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />
@@ -319,8 +331,10 @@
     <Compile Include="Assets\SimplePlatformController.cs" />
     <Compile Include="Assets\SimplePlatformControllerTest.cs" />
     <Compile Include="Assets\start_prototype.cs" />
+    <Compile Include="Assets\UIController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MegaBook\ReadMe.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

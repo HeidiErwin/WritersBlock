@@ -5,12 +5,21 @@ using UnityEngine;
 public class SentenceBlankController : MonoBehaviour {
 
     private WordController word;
+    private SentenceController sentence;
+    private float size = 0;
+
+    private void Start()
+    {
+        sentence = this.transform.parent.GetComponent<SentenceController>();
+    }
 
     private void Update()
     {
         if(word && !word.InSentence)
         {
             word = null;
+            this.size = 0;
+            sentence.RealignWords();
         }
     }
 
@@ -26,6 +35,8 @@ public class SentenceBlankController : MonoBehaviour {
             word = colliderWord;
             word.InSentence = true;
             word.transform.position = this.transform.position;
+            this.size = word.transform.GetComponent<SpriteRenderer>().bounds.size.x;
+            sentence.RealignWords();
         }
     }
 
@@ -36,6 +47,11 @@ public class SentenceBlankController : MonoBehaviour {
         } else {
             return "";
         }
+    }
+
+    public float GetSize()
+    {
+        return this.size;
     }
 
 }

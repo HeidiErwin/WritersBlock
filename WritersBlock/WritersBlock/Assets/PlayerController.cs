@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 1.0f;
+        float distance = 2.0f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
@@ -47,23 +47,7 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update()
 	{
-		Vector2 position = transform.position;
-		Vector2 direction = Vector2.down;
-		float distance = 2.0f;
-		Vector3 forward = transform.TransformDirection(Vector3.down) * 2;
-
-		RaycastHit2D hit = Physics2D.Raycast (position, direction, distance, groundLayer);
-
-		Debug.DrawRay (position, forward,Color.black);
-		if (hit.collider != null) {
-			isGrounded = true;
-		} else {
-			isGrounded = false;
-		}
-
-
 	
-
         if (transform.position.x > 0 && inventoryLeft)
         {
             inventoryLeft = false;
@@ -74,7 +58,7 @@ public class PlayerController : MonoBehaviour {
             inventoryLeft = true;
             inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x,inventory.transform.position.y,transform.position.z), Quaternion.identity);
         }
-		if (Input.GetButtonDown("Jump") && isGrounded)
+		if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             jump = true;
         }

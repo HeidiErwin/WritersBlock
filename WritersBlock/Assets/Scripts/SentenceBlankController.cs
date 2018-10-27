@@ -5,6 +5,7 @@ using UnityEngine;
 public class SentenceBlankController : MonoBehaviour {
 
     public float size;
+    private float start_size;
 
     private WordController word;
     private SentenceController sentence;
@@ -12,6 +13,7 @@ public class SentenceBlankController : MonoBehaviour {
     private void Start()
     {
         sentence = this.transform.parent.GetComponent<SentenceController>();
+        this.start_size = this.size;
     }
 
     private void Update()
@@ -19,7 +21,7 @@ public class SentenceBlankController : MonoBehaviour {
         if(word && !word.InSentence)
         {
             word = null;
-            this.size = 0;
+            this.size = this.start_size;
             sentence.RealignWords();
         }
     }

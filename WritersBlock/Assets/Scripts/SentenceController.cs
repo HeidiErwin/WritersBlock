@@ -14,10 +14,11 @@ public class SentenceController : MonoBehaviour {
 
     public void RealignWords()
     {
+        float center_pos = this.transform.position.x;
         Transform[] children = GetComponentsInChildren<Transform>();
         float[] widths = new float[children.Length];
         float offset = 0;
-        for (int i = 0; i < children.Length; i++)
+        for (int i = 1; i < children.Length; i++)
         {
             if (children[i].GetComponent<SentenceBlankController>())
             {
@@ -27,14 +28,14 @@ public class SentenceController : MonoBehaviour {
             {
                 widths[i] = children[i].GetComponent<SpriteRenderer>().bounds.size.x / 2;
             }
-            offset += widths[i];
+            offset -= widths[i];
         }
         float cumul_pos = 0;
-        for (int i = 0; i < children.Length; i++)
+        for (int i = 1; i < children.Length; i++)
         {
-            float x = cumul_pos + widths[i] - offset;
+            float x = center_pos + cumul_pos + widths[i] + offset;
             Debug.Log(x);
-            children[i].position = new Vector2(x, children[i].position.y);
+            children[i].position = new Vector2(x, transform.position.y);
             cumul_pos += widths[i] * 2;
         }
     }

@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
             inventoryLeft = true;
             inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x,inventory.transform.position.y,transform.position.z), Quaternion.identity);
         }
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
@@ -74,10 +74,7 @@ public class PlayerController : MonoBehaviour {
             Flip();
         else if (h < 0 && facingRight)
             Flip();
-        if (!IsGrounded())
-        {
-            //h = 0f;
-        }
+
 
         anim.SetFloat("Speed", Mathf.Abs(h));
 
@@ -89,7 +86,6 @@ public class PlayerController : MonoBehaviour {
 
         if (jump)
         {
-
             anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;

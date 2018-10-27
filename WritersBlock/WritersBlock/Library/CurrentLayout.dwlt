@@ -13,10 +13,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     x: 6.4
     y: 48.4
     width: 1440
     height: 769
+=======
+    x: 0
+    y: 44
+    width: 1280
+    height: 638
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
@@ -41,9 +48,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     width: 1440
     height: 769.2
   m_MinSize: {x: 950, y: 542}
+=======
+    width: 1280
+    height: 638
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -61,7 +74,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     width: 1440
+=======
+    width: 1280
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -81,8 +98,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     y: 749.2
     width: 1440
+=======
+    y: 618
+    width: 1280
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -104,12 +126,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     width: 1440
     height: 719.2
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
   controlID: 68
+=======
+    width: 1280
+    height: 588
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
+  vertical: 0
+  controlID: 64
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,12 +159,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     width: 1020
     height: 719.2
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 10
+=======
+    width: 907
+    height: 588
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
+  vertical: 1
+  controlID: 65
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,12 +192,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     width: 1020
     height: 380
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 106
+=======
+    width: 907
+    height: 311
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+  vertical: 0
+  controlID: 66
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,8 +252,9 @@ MonoBehaviour:
     height: 380
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 12}
   m_Panes:
+  - {fileID: 12}
   - {fileID: 14}
   - {fileID: 15}
   m_Selected: 0
@@ -232,10 +282,13 @@ MonoBehaviour:
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
-  - {fileID: 12}
   - {fileID: 17}
   m_Selected: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
   m_LastSelected: 2
+=======
+  m_LastSelected: 0
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -281,10 +334,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     x: 6.4
     y: 477.6
     width: 1018
     height: 318
+=======
+    x: 274
+    y: 94
+    width: 631
+    height: 290
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -296,19 +356,26 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     m_HBaseRangeMin: -107
     m_HBaseRangeMax: 107
     m_VBaseRangeMin: -60.2
     m_VBaseRangeMax: 60.2
+=======
+    m_HBaseRangeMin: -121.25
+    m_HBaseRangeMax: 121.25
+    m_VBaseRangeMin: -68.25
+    m_VBaseRangeMax: 68.25
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -317,25 +384,43 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
       width: 1018
       height: 301
     m_Scale: {x: 2.5, y: 2.5}
     m_Translation: {x: 509, y: 150.5}
+=======
+      width: 631
+      height: 273
+    m_Scale: {x: 2.5, y: 2.5}
+    m_Translation: {x: 315.5, y: 136.5}
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
       x: -203.6
       y: -60.2
       width: 407.2
       height: 120.4
+=======
+      x: -126.2
+      y: -54.6
+      width: 252.4
+      height: 109.2
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     m_MinimalGUI: 1
   m_defaultScale: 2
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
   m_LastWindowPixelSize: {x: 2545, y: 795}
+=======
+  m_LastWindowPixelSize: {x: 1262, y: 580}
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -360,6 +445,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     x: 6.4
     y: 97.6
     width: 304
@@ -370,6 +456,18 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: daddfefffee3feff6ebdffffbac2ffffc4c2ffff36c5ffff66f6ffff0000000078300000c2300000ce3100000a340000
+=======
+    x: 0
+    y: 94
+    width: 270
+    height: 290
+  m_PersistentViewDataDictionary: {fileID: 0}
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ae330000
+    m_LastClickedID: 13230
+    m_ExpandedIDs: e4f5ffff00000000
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -388,7 +486,11 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
   - UIRibbon
+=======
+  - Level1
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -413,10 +515,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     x: 314.4
     y: 97.6
     width: 710
     height: 359
+=======
+    x: 274
+    y: 94
+    width: 631
+    height: 290
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
   lastFramingTime: 1731.2668316444153
@@ -424,9 +533,15 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     m_Target: {x: 1.4736917, y: 0.4350816, z: -9.878954}
     speed: 2
     m_Value: {x: 1.4736917, y: 0.4350816, z: -9.878954}
+=======
+    m_Target: {x: 0.35808235, y: 0.5906768, z: 0.6195863}
+    speed: 2
+    m_Value: {x: 0.35808235, y: 0.5906768, z: 0.6195863}
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -517,10 +632,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     x: 6.4
     y: 477.6
     width: 1018
     height: 318
+=======
+    x: 0
+    y: 405
+    width: 905
+    height: 256
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -534,12 +656,13 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
   m_LastProjectPath: C:\Users\heidi\Documents\Clubs\BRGD\WritersBlock\WritersBlock\WritersBlock\WritersBlock
   m_LockTracker:
     m_IsLocked: 0
@@ -548,6 +671,16 @@ MonoBehaviour:
     m_SelectedIDs: 5a2e0000
     m_LastClickedID: 11866
     m_ExpandedIDs: 00000000722d0000e22d00007a2f000000ca9a3b
+=======
+  m_LastProjectPath: /Users/sarah/Desktop/WritersBlock/WritersBlock/WritersBlock
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 21}
+    m_SelectedIDs: ba300000
+    m_LastClickedID: 12474
+    m_ExpandedIDs: 00000000ba30000028310000be32000000ca9a3b
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -575,7 +708,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     m_ExpandedIDs: 00000000722d0000e22d00007a2f0000
+=======
+    m_ExpandedIDs: 00000000ba30000028310000be320000
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -675,10 +812,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD:WritersBlock/WritersBlock/Library/CurrentLayout.dwlt
     x: 1028.4
     y: 97.6
     width: 418
     height: 698.2
+=======
+    x: 909
+    y: 94
+    width: 371
+    height: 567
+>>>>>>> 2c3b9d5a5ac76d248616ce8ffaf99e07d2faaca1:WritersBlock/Library/CurrentLayout.dwlt
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 

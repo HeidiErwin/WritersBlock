@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Level1.unity
-=======
-- path: Assets/Scenes/WordTestScene.unity
->>>>>>> 211dc8c887b24816c6075592d0a026e54f1280ac
   isLoaded: 1
   isActive: 1

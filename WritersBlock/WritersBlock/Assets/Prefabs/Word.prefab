@@ -9,21 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1641443424614366}
+  m_RootGameObject: {fileID: 1388727689580302}
   m_IsPrefabAsset: 1
---- !u!1 &1641443424614366
+--- !u!1 &1388727689580302
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 224900548241866956}
-  - component: {fileID: 212562130816325942}
-  - component: {fileID: 61780862145052838}
-  - component: {fileID: 50053575901499132}
-  - component: {fileID: 114616468861749138}
-  - component: {fileID: 114239862630717760}
+  - component: {fileID: 224603232205328766}
+  - component: {fileID: 212765891779950812}
+  - component: {fileID: 61169365281584088}
+  - component: {fileID: 50602178039048198}
+  - component: {fileID: 114455392544617628}
+  - component: {fileID: 114822337208756940}
   m_Layer: 9
   m_Name: Word
   m_TagString: Word
@@ -31,13 +31,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &50053575901499132
+--- !u!50 &50602178039048198
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1641443424614366}
+  m_GameObject: {fileID: 1388727689580302}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -51,12 +51,12 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61780862145052838
+--- !u!61 &61169365281584088
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1641443424614366}
+  m_GameObject: {fileID: 1388727689580302}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -76,35 +76,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &114239862630717760
+--- !u!114 &114455392544617628
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1641443424614366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 471557411cdc8314387ab97cac5af22b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114616468861749138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1641443424614366}
+  m_GameObject: {fileID: 1388727689580302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7b0e4410d7a254fa6125dee7c2a7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: test
---- !u!212 &212562130816325942
+--- !u!114 &114822337208756940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388727689580302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471557411cdc8314387ab97cac5af22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &212765891779950812
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1641443424614366}
+  m_GameObject: {fileID: 1388727689580302}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -145,12 +145,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!224 &224900548241866956
+--- !u!224 &224603232205328766
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1641443424614366}
+  m_GameObject: {fileID: 1388727689580302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -160,6 +160,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.72, y: 0}
   m_SizeDelta: {x: 0.2, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}

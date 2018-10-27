@@ -13,6 +13,7 @@ public class WordDraggable : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        Debug.Log("down");
         gameObject.layer = 10;
         controller.InSentence = false;
         this.transform.parent = null;

@@ -13,4 +13,9 @@ public class WordController : MonoBehaviour {
         return this.text;
     }
 
+    public float GetHeight()
+    {
+        return this.transform.GetComponent<SpriteRenderer>().bounds.size.y;
+    }
+
 }

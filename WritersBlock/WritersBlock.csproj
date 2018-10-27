@@ -309,6 +309,7 @@
     <Compile Include="Assets\about.cs" />
     <Compile Include="Assets\dostuff.cs" />
     <Compile Include="Assets\exit.cs" />
+    <Compile Include="Assets\FullscreenSprite.cs" />
     <Compile Include="Assets\MegaBook\Scripts\MBComplexPage.cs" />
     <Compile Include="Assets\MegaBook\Scripts\MegaBookBendMod.cs" />
     <Compile Include="Assets\MegaBook\Scripts\MegaBookBuilder.cs" />
@@ -321,6 +322,7 @@
     <Compile Include="Assets\MegaBook\Scripts\MegaBookVisible.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TextMeshProMesh.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TypogenicMesh.cs" />
+    <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Scripts\InventoryController.cs" />
     <Compile Include="Assets\Scripts\SentenceBlankController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />

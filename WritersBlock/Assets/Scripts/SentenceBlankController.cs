@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SentenceBlankController : MonoBehaviour {
 
+    public float size;
+
     private WordController word;
     private SentenceController sentence;
-    private float size = 0;
 
     private void Start()
     {

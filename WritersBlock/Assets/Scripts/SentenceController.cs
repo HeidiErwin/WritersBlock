@@ -21,7 +21,7 @@ public class SentenceController : MonoBehaviour {
         {
             if (children[i].GetComponent<SentenceBlankController>())
             {
-                widths[i] = children[i].GetComponent<SentenceBlankController>().GetSize();
+                widths[i] = children[i].GetComponent<SentenceBlankController>().GetSize() / 2;
             }
             else
             {
@@ -33,7 +33,9 @@ public class SentenceController : MonoBehaviour {
         for (int i = 0; i < children.Length; i++)
         {
             float x = cumul_pos + widths[i] - offset;
+            Debug.Log(x);
             children[i].position = new Vector2(x, children[i].position.y);
+            cumul_pos += widths[i] * 2;
         }
     }
 

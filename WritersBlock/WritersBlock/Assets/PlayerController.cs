@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
+	private bool isGrounded = false;
     private bool facingRight = true;
     private bool jump = false;
     private float moveForce = 100f;
@@ -45,7 +46,24 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {
+	{
+		Vector2 position = transform.position;
+		Vector2 direction = Vector2.down;
+		float distance = 2.0f;
+		Vector3 forward = transform.TransformDirection(Vector3.down) * 2;
+
+		RaycastHit2D hit = Physics2D.Raycast (position, direction, distance, groundLayer);
+
+		Debug.DrawRay (position, forward,Color.black);
+		if (hit.collider != null) {
+			isGrounded = true;
+		} else {
+			isGrounded = false;
+		}
+
+
+	
+
         if (transform.position.x > 0 && inventoryLeft)
         {
             inventoryLeft = false;
@@ -56,7 +74,7 @@ public class PlayerController : MonoBehaviour {
             inventoryLeft = true;
             inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x,inventory.transform.position.y,transform.position.z), Quaternion.identity);
         }
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+		if (Input.GetButtonDown("Jump") && isGrounded)
         {
             jump = true;
         }
@@ -74,10 +92,7 @@ public class PlayerController : MonoBehaviour {
             Flip();
         else if (h < 0 && facingRight)
             Flip();
-        if (!IsGrounded())
-        {
-            //h = 0f;
-        }
+
 
         anim.SetFloat("Speed", Mathf.Abs(h));
 
@@ -89,7 +104,6 @@ public class PlayerController : MonoBehaviour {
 
         if (jump)
         {
-
             anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;

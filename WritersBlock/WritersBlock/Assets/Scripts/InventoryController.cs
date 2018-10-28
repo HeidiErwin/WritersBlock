@@ -11,6 +11,7 @@ public class InventoryController : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0))
         {
             collision.transform.parent = this.transform;
+            collision.transform.SetParent(this.transform);
         }
     }
 

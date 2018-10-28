@@ -57,5 +57,4 @@ public class SentenceBlankController : MonoBehaviour {
     {
         return this.size;
     }
-
 }

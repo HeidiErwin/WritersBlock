@@ -42,18 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Words
-    uniqueID: 1830347157
-    locked: 0
   - name: BackgroundImage
     uniqueID: 1393499005
     locked: 0
   - name: Props
     uniqueID: 555223453
     locked: 0
-  - name: Player
-    uniqueID: 1396338675
+  - name: Words
+    uniqueID: 1830347157
     locked: 0
   - name: Characters
     uniqueID: 813321131
+    locked: 0
+  - name: Player
+    uniqueID: 1396338675
     locked: 0

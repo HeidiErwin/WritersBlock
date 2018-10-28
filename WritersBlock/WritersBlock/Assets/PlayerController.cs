@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour {
             inventoryLeft = true;
             inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x,inventory.transform.position.y,transform.position.z), Quaternion.identity);
         }
-		if (Input.GetButtonDown("Jump") && IsGrounded())
+		if (Input.GetButtonDown("Jump"))// && IsGrounded())
         {
             jump = true;
         }

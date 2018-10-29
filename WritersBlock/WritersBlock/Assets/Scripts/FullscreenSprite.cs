@@ -2,7 +2,8 @@
 
 public class FullscreenSprite : MonoBehaviour
 {
-
+    // This was making setting up levels tricky, because sizes change in game.
+    // We will likely instead simply take the approach of properly setting up levels.
     void Awake()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();

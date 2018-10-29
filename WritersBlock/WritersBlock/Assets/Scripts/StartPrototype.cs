@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class start_prototype : MonoBehaviour {
+public class StartPrototype : MonoBehaviour {
 
-public void doStart()
+public void DoStart()
     {
         SceneManager.LoadScene("Level1");
     }

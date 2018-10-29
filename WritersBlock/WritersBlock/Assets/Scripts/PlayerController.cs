@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject inventory;
     public LayerMask groundLayer;
+    public int page; // 1 or 2 to indicate right or left page, to indicate if word can be dragged
 
     bool IsGrounded()
     {

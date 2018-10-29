@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class about : MonoBehaviour {
+public class About : MonoBehaviour {
 
     bool aboutVisible = false;
 
-    public void doAbout()
+    public void DoAbout()
     {
         aboutVisible = !aboutVisible;
     }

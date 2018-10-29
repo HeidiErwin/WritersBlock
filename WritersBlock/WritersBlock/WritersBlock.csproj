@@ -303,10 +303,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\about.cs" />
-    <Compile Include="Assets\dostuff.cs" />
-    <Compile Include="Assets\exit.cs" />
-    <Compile Include="Assets\FullscreenSprite.cs" />
     <Compile Include="Assets\MegaBook\Scripts\MBComplexPage.cs" />
     <Compile Include="Assets\MegaBook\Scripts\MegaBookBendMod.cs" />
     <Compile Include="Assets\MegaBook\Scripts\MegaBookBuilder.cs" />
@@ -319,20 +315,23 @@
     <Compile Include="Assets\MegaBook\Scripts\MegaBookVisible.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TextMeshProMesh.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TypogenicMesh.cs" />
-    <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\About.cs" />
+    <Compile Include="Assets\Scripts\Exit.cs" />
+    <Compile Include="Assets\Scripts\FullscreenSprite.cs" />
     <Compile Include="Assets\Scripts\InventoryController.cs" />
     <Compile Include="Assets\Scripts\Page.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SentenceBlankController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinator.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinatorTestLevel.cs" />
+    <Compile Include="Assets\Scripts\SimplePlatformController.cs" />
+    <Compile Include="Assets\Scripts\SimplePlatformControllerTest.cs" />
+    <Compile Include="Assets\Scripts\StartPrototype.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\WordBank.cs" />
     <Compile Include="Assets\Scripts\WordController.cs" />
     <Compile Include="Assets\Scripts\WordDraggable.cs" />
-    <Compile Include="Assets\SimplePlatformController.cs" />
-    <Compile Include="Assets\SimplePlatformControllerTest.cs" />
-    <Compile Include="Assets\start_prototype.cs" />
-    <Compile Include="Assets\UIController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MegaBook\ReadMe.txt" />

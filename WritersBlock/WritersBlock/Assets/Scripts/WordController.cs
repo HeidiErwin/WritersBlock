@@ -13,6 +13,11 @@ public class WordController : MonoBehaviour {
         return this.text;
     }
 
+    public void SetText(string newText)
+    {
+        this.text = newText;
+    }
+
     public float GetHeight()
     {
         return this.transform.GetComponent<SpriteRenderer>().bounds.size.y;

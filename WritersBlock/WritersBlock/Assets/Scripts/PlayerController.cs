@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject inventory;
     public LayerMask groundLayer;
-    public int page; // 1 or 2 to indicate right or left page, to indicate if word can be dragged
+    [SerializeField] private int page = 1; // 1 or 2 to indicate right or left page, used to check if word can be dragged
 
     bool IsGrounded()
     {
@@ -48,16 +48,21 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update()
 	{
-	
-        if (transform.position.x > 0 && inventoryLeft)
+        if (transform.position.x > 0)
         {
-            inventoryLeft = false;
-            inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
+            page = 2;
+            if (inventoryLeft) {
+                inventoryLeft = false;
+                inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
+            }
         }
-        if (transform.position.x <= 0 && !inventoryLeft)
+        if (transform.position.x <= 0)
         {
-            inventoryLeft = true;
-            inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x,inventory.transform.position.y,transform.position.z), Quaternion.identity);
+            page = 1;
+            if (!inventoryLeft) {
+                inventoryLeft = true;
+                inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
+            }
         }
 		if (Input.GetButtonDown("Jump"))// && IsGrounded())
         {
@@ -101,5 +106,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    public void SetPage(int pg) {
+        page = pg;
+    }
+
+    public int GetPage() {
+        return page;
     }
 }

@@ -18,8 +18,8 @@ TagManager:
   - Word
   - DraggingWord
   - Pages
-  - 
-  - 
+  - Page Divider
+  - Player
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: Props
     uniqueID: 555223453
+    locked: 0
+  - name: Page Divide
+    uniqueID: 3115470657
     locked: 0
   - name: Words
     uniqueID: 1830347157

@@ -43,12 +43,6 @@ public class WordBank : MonoBehaviour {
         }
     }
 
-   // public void SetPage(int pageNum) {
-    //    currentPage = pageNum;
-     //   this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y * pageNum);
-    //    this.RealignWords();
-   // }
-
     private bool HaveWord(WordController addWord)
     {
         foreach (WordController word in wordsInBank)

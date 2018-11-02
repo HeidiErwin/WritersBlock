@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour {
     private float jumpForce = 455f;
     private bool inventoryLeft = true;
 
+    // Audio
+    private AudioSource source;
+    public AudioClip deathSound;
+    public AudioClip jumpSound;
+
     private bool grounded = false;
     private Animator anim;
     private Rigidbody2D rb2d;
@@ -40,6 +45,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
+        source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
@@ -94,6 +100,7 @@ public class PlayerController : MonoBehaviour {
 
         if (jump)
         {
+            source.PlayOneShot(jumpSound, 1.0f);
             anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;
@@ -115,4 +122,5 @@ public class PlayerController : MonoBehaviour {
     public int GetPage() {
         return page;
     }
+
 }

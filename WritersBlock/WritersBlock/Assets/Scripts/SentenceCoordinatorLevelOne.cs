@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SentenceCoordinatorLevelOne : SentenceCoordinator {
+public class SentenceCoordinatorLevelOne : MonoBehaviour {
 
     /**
      * 
@@ -13,12 +14,18 @@ public class SentenceCoordinatorLevelOne : SentenceCoordinator {
      **/
 
     public GameObject crown; // Enabled upon poisoning
-
+    public GameObject queen;
     public WordController pie; // Can be poisoned
+
+    public Sprite poisonedPie;
+    public Sprite deadQueen;
+
+    private SentenceController[] sentences;
 
     private void Start()
     {
         crown.SetActive(false);
+        sentences = GetComponentsInChildren<SentenceController>();
     }
 
     private void Update()
@@ -35,6 +42,7 @@ public class SentenceCoordinatorLevelOne : SentenceCoordinator {
 
     void ParseQueenSentence(string[] blanks)
     {
+        Debug.Log(blanks[0]);
         switch (blanks[0]) // switch on all words that trigger some effect
         {
             case "berry":
@@ -69,20 +77,19 @@ public class SentenceCoordinatorLevelOne : SentenceCoordinator {
 
     void PoisonBerry()
     {
+        pie.GetComponent<SpriteRenderer>().sprite = poisonedPie;
         pie.SetText("poisoned_pie");
-        animator.SetTrigger("poison_pie");
     }
 
     void KillQueen()
     {
-        animator.SetTrigger("queen_death");
-        // TODO: wait for animation to finish
+        queen.GetComponent<SpriteRenderer>().sprite = deadQueen;
         crown.SetActive(true);
     }
 
     void Beat_Level()
     {
-        // TODO
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

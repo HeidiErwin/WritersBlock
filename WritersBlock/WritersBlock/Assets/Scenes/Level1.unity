@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1159,11 +1159,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4093850855112386, guid: 8ce4650bcbae502469f924f3a071f52b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -7.2
       objectReference: {fileID: 0}
     - target: {fileID: 4093850855112386, guid: 8ce4650bcbae502469f924f3a071f52b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.87
+      value: -2.59
       objectReference: {fileID: 0}
     - target: {fileID: 4093850855112386, guid: 8ce4650bcbae502469f924f3a071f52b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1224,6 +1224,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114904882259777158, guid: 8ce4650bcbae502469f924f3a071f52b,
+        type: 2}
+      propertyPath: wordLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce4650bcbae502469f924f3a071f52b, type: 2}
@@ -3342,7 +3347,7 @@ GameObject:
   - component: {fileID: 1917380293}
   - component: {fileID: 1917380295}
   - component: {fileID: 1917380296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

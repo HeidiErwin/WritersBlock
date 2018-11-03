@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject inventory;
     public LayerMask groundLayer;
+    public LayerMask wordLayer;
     [SerializeField] private int page = 1; // 1 or 2 to indicate right or left page, used to check if word can be dragged
 
     bool IsGrounded()
@@ -34,6 +35,12 @@ public class PlayerController : MonoBehaviour {
         float distance = 2.0f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        hit = Physics2D.Raycast(position, direction, distance, wordLayer);
         if (hit.collider != null)
         {
             return true;
@@ -70,7 +77,7 @@ public class PlayerController : MonoBehaviour {
                 inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
             }
         }
-		if (Input.GetButtonDown("Jump"))// && IsGrounded())
+		if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             jump = true;
         }
@@ -92,7 +99,7 @@ public class PlayerController : MonoBehaviour {
 
        anim.SetFloat("Speed", Mathf.Abs(h));
 
-        if (h * rb2d.velocity.x < maxSpeed)
+        if (h * rb2d.velocity.x < maxSpeed && IsGrounded())
             rb2d.AddForce(Vector2.right * h * moveForce);
 
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)

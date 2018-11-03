@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
     private AudioSource source;
     public AudioClip deathSound;
     public AudioClip jumpSound;
+    public AudioClip walkSound;
+    public AudioClip backgroundSound;
 
     private bool grounded = false;
     private Animator anim;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject inventory;
     public LayerMask groundLayer;
     public LayerMask wordLayer;
+    private float walkSoundStartTime = 0f;
     [SerializeField] private int page = 1; // 1 or 2 to indicate right or left page, used to check if word can be dragged
 
     bool IsGrounded()
@@ -57,6 +60,8 @@ public class PlayerController : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         source.loop = true;
+        source.clip = backgroundSound;
+        source.Play(0);
     }
 
     // Update is called once per frame
@@ -106,9 +111,15 @@ public class PlayerController : MonoBehaviour {
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 
+        if (IsGrounded() && rb2d.velocity.x != 0 && (Time.time - walkSoundStartTime) >= (walkSound.length / 3))
+        {
+            walkSoundStartTime = Time.time;
+            source.PlayOneShot(walkSound, 0.5f);
+        }
+
         if (jump)
         {
-            source.PlayOneShot(jumpSound, 1.0f);
+            source.PlayOneShot(jumpSound, 0.5f);
             anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;

@@ -60,3 +60,6 @@ TagManager:
   - name: Player
     uniqueID: 1396338675
     locked: 0
+  - name: WallBeforeGarden
+    uniqueID: 1275165141
+    locked: 0

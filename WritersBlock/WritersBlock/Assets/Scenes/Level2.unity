@@ -292,7 +292,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crown: {fileID: 0}
+  queen: {fileID: 0}
   pie: {fileID: 0}
+  poisonedPie: {fileID: 0}
+  deadQueen: {fileID: 0}
 --- !u!4 &37975580
 Transform:
   m_ObjectHideFlags: 0
@@ -2731,7 +2734,7 @@ SpriteRenderer:
   m_SortingLayerID: 1275165141
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6b10358f3302bd54b837830be32c2858, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b563e05ee4ed5343997110cc118bc85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2749,8 +2752,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263568808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23, y: -0.262, z: 0}
-  m_LocalScale: {x: 0.5709078, y: 0.74225307, z: 0.7291287}
+  m_LocalPosition: {x: 0.89, y: -0.22, z: 0}
+  m_LocalScale: {x: -0.5709078, y: 0.75709814, z: 0.7291287}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19

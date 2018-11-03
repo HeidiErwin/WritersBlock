@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour {
             Flip();
 
 
-        anim.SetFloat("Speed", Mathf.Abs(h));
+       anim.SetFloat("Speed", Mathf.Abs(h));
 
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);

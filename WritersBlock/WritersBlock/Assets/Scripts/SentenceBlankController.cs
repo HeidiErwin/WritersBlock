@@ -14,14 +14,16 @@ public class SentenceBlankController : MonoBehaviour {
     {
         sentence = this.transform.parent.GetComponent<SentenceController>();
         this.start_size = this.size;
+        this.size = GetComponent<SpriteRenderer>().bounds.size.x; // TODO decide if fixed size of blanks or based off sprite
     }
 
     private void Update()
     {
         if(word && !word.InSentence)
         {
+            GetComponent<SpriteRenderer>().enabled = true;
             word = null;
-            this.size = this.start_size;
+            this.size = GetComponent<SpriteRenderer>().bounds.size.x; // this.start_size;
             sentence.RealignWords();
         }
     }
@@ -35,6 +37,7 @@ public class SentenceBlankController : MonoBehaviour {
                 word.transform.position = new Vector2(this.transform.position.x, 
                     this.transform.position.y + word.transform.GetComponent<SpriteRenderer>().bounds.size.x);
             }
+            GetComponent<SpriteRenderer>().enabled = false;
             WordController colliderWord = collision.transform.GetComponent<WordController>();
             word = colliderWord;
             word.InSentence = true;

@@ -6,6 +6,8 @@ public class SentenceController : MonoBehaviour {
 
     private SentenceBlankController[] blanks;
 
+    public float padding;
+
     private void Start()
     {
         blanks = GetComponentsInChildren<SentenceBlankController>();
@@ -34,9 +36,8 @@ public class SentenceController : MonoBehaviour {
         for (int i = 1; i < children.Length; i++)
         {
             float x = center_pos + cumul_pos + widths[i] + offset;
-            Debug.Log(x);
             children[i].position = new Vector2(x, transform.position.y);
-            cumul_pos += widths[i] * 2;
+            cumul_pos += widths[i] * 2 + padding;
         }
     }
 

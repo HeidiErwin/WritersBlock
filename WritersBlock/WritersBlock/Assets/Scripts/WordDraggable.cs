@@ -33,10 +33,9 @@ public class WordDraggable : MonoBehaviour {
         positionBeforeMove = new Vector3(this.transform.position.x, this.transform.position.y);
         pageBeforeDrag = controller.GetPage();
         if (onSamePageAsPlayer) {
-            Debug.Log("down");
             gameObject.layer = 10;
             controller.InSentence = false;
-            this.transform.parent = null;
+            this.transform.SetParent(null);
         }
     }
 

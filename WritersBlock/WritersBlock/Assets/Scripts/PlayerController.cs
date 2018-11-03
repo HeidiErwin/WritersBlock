@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
+        source.loop = true;
     }
 
     // Update is called once per frame
@@ -99,7 +100,7 @@ public class PlayerController : MonoBehaviour {
 
        anim.SetFloat("Speed", Mathf.Abs(h));
 
-        if (h * rb2d.velocity.x < maxSpeed && IsGrounded())
+        if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);
 
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)

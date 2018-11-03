@@ -9,11 +9,14 @@ public class WordDraggable : MonoBehaviour {
     private GameController gameController;
     private bool onSamePageAsPlayer;
     private Vector3 positionBeforeMove;
+    private AudioSource source;
+    public AudioClip wordClickSound;
     int pageBeforeDrag;
 
     private void Start()
     {
         controller = GetComponent<WordController>();
+        source = GetComponent<AudioSource>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
@@ -30,6 +33,7 @@ public class WordDraggable : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        source.PlayOneShot(wordClickSound, 0.5f);
         positionBeforeMove = new Vector3(this.transform.position.x, this.transform.position.y);
         pageBeforeDrag = controller.GetPage();
         if (onSamePageAsPlayer) {

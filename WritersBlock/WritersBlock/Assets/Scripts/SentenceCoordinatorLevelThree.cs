@@ -36,24 +36,24 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
             KillLad();
         }
         // Sentence Two: "air"
-        if (this.sentences[1].GetWords()[0].Equals("air") || this.sentences[1].GetWords()[1].Equals("air")) { // AIR can take the place of either CUP or BOARD
-            MakeBookFloat();
-        }
+        //if (this.sentences[1].GetWords()[0].Equals("air") || this.sentences[1].GetWords()[1].Equals("air")) { // AIR can take the place of either CUP or BOARD
+        //     MakeBookFloat();
+        //}
         // Sentence Three: "cup"
-        if (this.sentences[2].GetWords()[0].Equals("cup")) {
-            GiveWizardCup();
+        //if (this.sentences[2].GetWords()[0].Equals("cup")) {
+        //    GiveWizardCup();
 
-        }
-        // Sentence Three: "block"
-        if (this.sentences[3].GetWords()[0].Equals("block")) {
-            DestroyBlockade();
+        //}
+        //// Sentence Three: "block"
+        //if (this.sentences[3].GetWords()[0].Equals("block")) {
+        //    DestroyBlockade();
 
-        }
-        // Sentence Four: "on" and "board"
-        if (this.sentences[4].GetWords()[0].Equals("on") &&
-            this.sentences[4].GetWords()[1].Equals("board")) {
-            BeatLevel();
-        }
+        //}
+        //// Sentence Four: "on" and "board"
+        //if (this.sentences[4].GetWords()[0].Equals("on") &&
+        //    this.sentences[4].GetWords()[1].Equals("board")) {
+        //    BeatLevel();
+        //}
     }
 
     void DestroyBlockade() {
@@ -66,6 +66,8 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     void KillLad() {
         // TODO: show frame of lad aging & dying
+        lad.GetComponent<SpriteRenderer>().sprite = deadLad;
+        Debug.Log("lad dead");
     }
 
     void MakeBookFloat() {

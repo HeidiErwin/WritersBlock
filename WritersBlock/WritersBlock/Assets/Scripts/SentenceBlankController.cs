@@ -35,7 +35,7 @@ public class SentenceBlankController : MonoBehaviour {
             if (word != null)
             {
                 word.transform.position = new Vector2(this.transform.position.x, 
-                    this.transform.position.y + word.transform.GetComponent<SpriteRenderer>().bounds.size.x);
+                    this.transform.position.y + word.transform.GetComponent<SpriteRenderer>().bounds.size.y);
             }
             GetComponent<SpriteRenderer>().enabled = false;
             WordController colliderWord = collision.transform.GetComponent<WordController>();

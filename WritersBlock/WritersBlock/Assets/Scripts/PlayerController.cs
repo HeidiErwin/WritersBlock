@@ -67,6 +67,9 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update()
 	{
+        float h = Input.GetAxis("Horizontal");
+        anim.SetBool("walking", h != 0);
+
         if (transform.position.x > 0)
         {
             page = 2;
@@ -103,7 +106,7 @@ public class PlayerController : MonoBehaviour {
             Flip();
 
 
-       anim.SetFloat("Speed", Mathf.Abs(h));
+        // anim.SetFloat("Speed", Mathf.Abs(h));
 
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);
@@ -120,7 +123,7 @@ public class PlayerController : MonoBehaviour {
         if (jump)
         {
             source.PlayOneShot(jumpSound, 0.5f);
-            anim.SetTrigger("Jump");
+            // anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;
         }

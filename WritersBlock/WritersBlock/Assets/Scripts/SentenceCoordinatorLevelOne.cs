@@ -42,7 +42,6 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
 
     void ParseQueenSentence(string[] blanks)
     {
-        Debug.Log(blanks[0]);
         switch (blanks[0]) // switch on all words that trigger some effect
         {
             case "berry":

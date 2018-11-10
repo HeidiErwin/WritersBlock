@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
@@ -10,11 +11,16 @@ public class UIController : MonoBehaviour {
     public GameObject startB;
     public GameObject aboutB;
     public GameObject quitB;
-    public GameObject flipB;
+    private AudioSource source;
+    public AudioClip menuSound;
+    public AudioClip levelTransitionSound;
 
-	// Use this for initialization
-	void Start () {
-
+    // Use this for initialization
+    void Start () {
+        source = GetComponent<AudioSource>();
+        source.loop = true;
+        source.clip = menuSound;
+        source.Play(0);
     }
 	
 	// Update is called once per frame
@@ -22,31 +28,27 @@ public class UIController : MonoBehaviour {
 		
 	}
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 	public void StartGame(){
         Object.Destroy(startB);
         Object.Destroy(aboutB);
         Object.Destroy(quitB);
-        Object.Destroy(flipB);
         var bkCtrl = GameObject.FindObjectOfType<MegaBookBuilder>();
-        bkCtrl.SetPageTexture(LoadPNG("C:\\Users\\David\\Documents\\WritersBlock\\WritersBlock\\Images\\prototype_background_L.jpg"), 0, false);
-        bkCtrl.SetPageTexture(LoadPNG("C:\\Users\\David\\Documents\\WritersBlock\\WritersBlock\\Images\\prototype_background_R.jpg"), 1, true);
         _CamAnimator.SetTrigger ("GameStartZoom");
         bkCtrl.NextPage();
         bkCtrl.NextPage();
-	}
+        StartCoroutine(Wait());
+    }
 
-    public static Texture2D LoadPNG(string filePath)
+    private IEnumerator Wait()
     {
-
-        Texture2D tex = null;
-        byte[] fileData;
-
-        if (File.Exists(filePath))
-        {
-            fileData = File.ReadAllBytes(filePath);
-            tex = new Texture2D(2, 2);
-            tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
-        }
-        return tex;
+        yield return new WaitForSeconds(3);
+        source.PlayOneShot(levelTransitionSound, 0.5f);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Level1");
     }
 }

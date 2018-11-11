@@ -9,6 +9,8 @@ public class SentenceBlankController : MonoBehaviour {
 
     private WordController word;
     private SentenceController sentence;
+    private bool locked = false;
+    private bool firstCheck = true;
 
     private void Start()
     {
@@ -30,7 +32,7 @@ public class SentenceBlankController : MonoBehaviour {
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0))
+        if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0) && !this.locked && (collision.GetComponent<WordDraggable>().OnSamePageAsPlayer || firstCheck))
         {
             if (word != null)
             {
@@ -45,6 +47,7 @@ public class SentenceBlankController : MonoBehaviour {
             this.size = word.transform.GetComponent<SpriteRenderer>().bounds.size.x;
             sentence.RealignWords();
         }
+        firstCheck = false;
     }
 
     public string GetText()
@@ -60,4 +63,11 @@ public class SentenceBlankController : MonoBehaviour {
     {
         return this.size;
     }
+
+    public void LockWord()
+    {
+        word.GetComponent<BoxCollider2D>().enabled = false;
+        this.locked = true;
+    }
+
 }

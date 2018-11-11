@@ -51,4 +51,12 @@ public class SentenceController : MonoBehaviour {
         return wordText;
     }
 
+    public void Lock()
+    {
+        foreach (SentenceBlankController blank in blanks)
+        {
+            blank.LockWord();
+        }
+    }
+
 }

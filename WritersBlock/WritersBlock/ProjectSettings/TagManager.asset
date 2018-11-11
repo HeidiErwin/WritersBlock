@@ -51,6 +51,9 @@ TagManager:
   - name: Page Divide
     uniqueID: 3115470657
     locked: 0
+  - name: BlankSprites
+    uniqueID: 1742290691
+    locked: 0
   - name: Words
     uniqueID: 1830347157
     locked: 0

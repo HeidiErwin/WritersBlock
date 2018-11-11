@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour {
             page = 2;
             if (inventoryLeft) {
                 inventoryLeft = false;
+                inventory.GetComponent<WordBank>().SetPage(2);
                 inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
             }
         }
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour {
             page = 1;
             if (!inventoryLeft) {
                 inventoryLeft = true;
+                inventory.GetComponent<WordBank>().SetPage(1);
                 inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
             }
         }
@@ -123,7 +125,7 @@ public class PlayerController : MonoBehaviour {
         if (jump)
         {
             source.PlayOneShot(jumpSound, 0.5f);
-            // anim.SetTrigger("Jump");
+            anim.SetTrigger("jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;
         }

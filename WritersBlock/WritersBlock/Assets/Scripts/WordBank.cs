@@ -55,12 +55,29 @@ public class WordBank : MonoBehaviour {
         return false;
     }
 
+    public bool HaveWord(string wordText)
+    {
+        foreach (WordController word in wordsInBank)
+        {
+            if (word.GetText().Equals(wordText))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void KickWord(WordController word)
     {
+        int flip = 1;
+        if (currentPage == 2)
+        {
+            flip = -1;
+        }
         word.transform.position =
             new Vector2(this.transform.position.x +
             (this.transform.GetComponent<SpriteRenderer>().bounds.size.x
-            * 0.75f), word.transform.position.y);
+            * 0.75f) * flip, word.transform.position.y);
 
     }
 
@@ -82,6 +99,11 @@ public class WordBank : MonoBehaviour {
                 }
             } 
         }
+    }
+
+    public void SetPage(int newPage)
+    {
+        currentPage = newPage;
     }
 
 }

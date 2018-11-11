@@ -7,7 +7,7 @@ public class WordDraggable : MonoBehaviour {
 
     private WordController controller;
     private GameController gameController;
-    private bool onSamePageAsPlayer;
+    public bool OnSamePageAsPlayer { get; set; }
     private Vector3 positionBeforeMove;
     private AudioSource source;
     public AudioClip wordClickSound;
@@ -21,7 +21,7 @@ public class WordDraggable : MonoBehaviour {
     }
 
     private void Update() {
-        onSamePageAsPlayer = (gameController.player.GetPage() == controller.GetPage());
+        OnSamePageAsPlayer = (gameController.player.GetPage() == controller.GetPage());
 
         if (transform.position.x <= 0) {
             controller.SetPage(1);
@@ -36,7 +36,7 @@ public class WordDraggable : MonoBehaviour {
         source.PlayOneShot(wordClickSound, 0.5f);
         positionBeforeMove = new Vector3(this.transform.position.x, this.transform.position.y);
         pageBeforeDrag = controller.GetPage();
-        if (onSamePageAsPlayer) {
+        if (OnSamePageAsPlayer) {
             gameObject.layer = 10;
             controller.InSentence = false;
             this.transform.SetParent(null);
@@ -46,7 +46,7 @@ public class WordDraggable : MonoBehaviour {
     private void OnMouseUp()
     {
         // if tried to drag word to different page than player is on, snap back to position before dragging started
-        if (!onSamePageAsPlayer) { 
+        if (!OnSamePageAsPlayer) { 
             this.transform.position = positionBeforeMove;
             controller.SetPage(pageBeforeDrag);
         }

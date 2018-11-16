@@ -16,6 +16,7 @@ TextureImporter:
     21300022: Lemon
     21300024: keyWords_0
     21300026: Work
+    21300028: keyWords_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -373,6 +374,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 74edce846ad078740b7a8e1225c5f106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyWords_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 837
+        width: 63
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e8f4478111fa446a234368d5c79785
       vertices: []
       indices: 
       edges: []

@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
-
     /**
+     * Level Summary: 
+     * 1. Player kills lad by making lad "so OLD" instead of "so TIRED". 
+     * 2. Move book to floating in the air by "the wizard's book is in the AIR"
+     * 3. Give wizard CUP as container 
+     * 4. Make "BLOCKade" disappear
+     * 5. Convince wizard to help you by making him say "I'm ON BOARD"
+     * 
      * 
      * Sentence 0: "I'm so TIRED. I wish i were grown up so I could retire."
      * Sentence 1: "The wizard’s book is in the CUPBOARD"
@@ -20,13 +26,46 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     public GameObject lemonade;
     public GameObject lad;
+    public GameObject ladSpeech;
+    public GameObject floatingRecipeBook;
+    public GameObject disappearSentenceObject; // "I'm going to make this LEMONade disappear"
+    public GameObject sentenceAboutWorkObject; // "I'm OFF WORK"
+    public GameObject offWordObject;
+    public GameObject workWordObject;
+    public GameObject cupWordObject;
+    public GameObject lemonWordObject;
+    public GameObject playerSpeech;
+    public GameObject originalWizard;
+    public GameObject movedWizard;
+    public GameObject blankToHandWizardCup;
+    public GameObject wizardNeedsCup;
+
+
+    private SentenceController disappearSentence;
+    private SentenceController sentenceAboutWork;
+    private SentenceController handWizardCupSentence;
+
+    private WordController offWord;
+    private WordController workWord;
+    private WordController lemonWord;
+
 
     public Sprite deadLad;
+    private bool lemonadeConjured = false;
+    private bool blockadeDestroyed = false;
+    private bool bookInAir = false;
+    private bool ladDead = false;
+
 
     private SentenceController[] sentences;
 
     private void Start() {
         sentences = GetComponentsInChildren<SentenceController>();
+        disappearSentence = disappearSentenceObject.GetComponent<SentenceController>();
+        sentenceAboutWork = sentenceAboutWorkObject.GetComponent<SentenceController>();
+        handWizardCupSentence = blankToHandWizardCup.GetComponent<SentenceController>();
+        offWord = offWordObject.GetComponent<WordController>();
+        workWord = workWordObject.GetComponent<WordController>();
     }
 
     private void Update() {
@@ -35,43 +74,70 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         if (this.sentences[0].GetWords()[0].Equals("old")) {
             KillLad();
         }
-        // Sentence Two: "air"
-        //if (this.sentences[1].GetWords()[0].Equals("air") || this.sentences[1].GetWords()[1].Equals("air")) { // AIR can take the place of either CUP or BOARD
-        //     MakeBookFloat();
-        //}
+
+        // Sentence Two: "air" // AIR can take the place of either CUP or BOARD
+        if ((this.sentences[1].GetWords()[0].Equals("air") && this.sentences[1].GetWords()[1].Equals(""))
+            || (this.sentences[1].GetWords()[1].Equals("air") && this.sentences[1].GetWords()[0].Equals(""))) { 
+             MakeBookFloat();
+        }
+
         // Sentence Three: "cup"
-        //if (this.sentences[2].GetWords()[0].Equals("cup")) {
-        //    GiveWizardCup();
+        if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup")) {
+            GiveWizardCup();
+        }
 
-        //}
-        //// Sentence Three: "block"
-        //if (this.sentences[3].GetWords()[0].Equals("block")) {
-        //    DestroyBlockade();
-
-        //}
-        //// Sentence Four: "on" and "board"
-        //if (this.sentences[4].GetWords()[0].Equals("on") &&
-        //    this.sentences[4].GetWords()[1].Equals("board")) {
-        //    BeatLevel();
-        //}
+        // Sentence Three: "block"
+        if (!blockadeDestroyed && lemonadeConjured && disappearSentence.GetWords()[0].Equals("block")) {
+            DestroyBlockade();
+            PlayerAsksForWizardsHelp();
+        }
+        // Sentence Four: "on" and "board"
+        if (blockadeDestroyed && sentenceAboutWork.GetWords()[0].Equals("on") &&
+            sentenceAboutWork.GetWords()[1].Equals("board")) {
+            WizardConvinced();
+        }
     }
 
     void DestroyBlockade() {
-        // TODO: break down blockade so characters can leave
+        blockadeDestroyed = true;
+        GameObject.Find("Blockade").SetActive(false);
     }
 
     void GiveWizardCup() {
-        // TODO: show frame of lad aging & dying    
+        lemonade.SetActive(true);
+        lemonadeConjured = true;
+        cupWordObject.SetActive(false);
+        wizardNeedsCup.SetActive(false);
+        disappearSentenceObject.SetActive(true);
+        lemonWordObject.SetActive(true);
     }
 
     void KillLad() {
         // TODO: show frame of lad aging & dying
         lad.GetComponent<SpriteRenderer>().sprite = deadLad;
-        Debug.Log("lad dead");
+        ladDead = true;
+        ladSpeech.SetActive(false);
+    }
+
+    void PlayerAsksForWizardsHelp() {
+        playerSpeech.SetActive(true);
+        sentenceAboutWorkObject.SetActive(true);
+        offWordObject.SetActive(true);
+        workWordObject.SetActive(true);
+        // wizard responds "I'm OFF WORK"
     }
 
     void MakeBookFloat() {
-        // TODO: make book sprite appear in air
+        bookInAir = true;
+        floatingRecipeBook.SetActive(true);
+        blankToHandWizardCup.SetActive(true);
+        movedWizard.SetActive(true);
+        originalWizard.SetActive(false);
+        wizardNeedsCup.SetActive(true);
+    }
+
+    void WizardConvinced() { //TODO
+        BeatLevel();
     }
 
     void BeatLevel() {

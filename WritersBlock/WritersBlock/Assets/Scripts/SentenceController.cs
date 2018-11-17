@@ -8,7 +8,7 @@ public class SentenceController : MonoBehaviour {
 
     public float padding;
 
-    private void Start()
+    public void Start()
     {
         blanks = GetComponentsInChildren<SentenceBlankController>();
         RealignWords();

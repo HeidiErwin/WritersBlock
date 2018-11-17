@@ -36,14 +36,14 @@ public class SentenceBlankController : MonoBehaviour {
         {
             if (word != null)
             {
-                word.transform.position = new Vector2(this.transform.position.x, 
-                    this.transform.position.y + word.transform.GetComponent<SpriteRenderer>().bounds.size.y);
+                word.transform.position = new Vector3(this.transform.position.x, 
+                    this.transform.position.y + word.transform.GetComponent<SpriteRenderer>().bounds.size.y, word.transform.position.z);
             }
             GetComponent<SpriteRenderer>().enabled = false;
             WordController colliderWord = collision.transform.GetComponent<WordController>();
             word = colliderWord;
             word.InSentence = true;
-            word.transform.position = this.transform.position;
+            word.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, word.transform.position.z);
             this.size = word.transform.GetComponent<SpriteRenderer>().bounds.size.x;
             sentence.RealignWords();
         }

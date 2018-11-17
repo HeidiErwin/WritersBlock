@@ -58,9 +58,11 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
         {
             case "berry":
                 this.KillQueen();
+                sentences[0].Lock();
                 break;
             case "poisoned_pie":
                 this.KillQueen();
+                sentences[0].Lock();
                 break;
         }
     }
@@ -81,6 +83,7 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
         {
             case "crown":
                 this.Beat_Level();
+                sentences[2].Lock();
                 break;
 
         }
@@ -95,6 +98,7 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     void KillQueen()
     {
         queen.GetComponent<SpriteRenderer>().sprite = deadQueen;
+        sentences[0].Lock();
         crown.SetActive(true);
     }
 

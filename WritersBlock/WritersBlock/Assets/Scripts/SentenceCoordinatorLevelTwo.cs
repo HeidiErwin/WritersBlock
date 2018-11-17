@@ -29,6 +29,8 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject chestThought;
     public GameObject stickSentenceObject; // "I'm holding my ___ forever!"
     public GameObject stickStaticTextObject;
+    public GameObject oldText; // disappears when level is beat
+    public GameObject endingText; // displayed when level is beat
 
     private SentenceController stickSentence;
 
@@ -37,6 +39,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     private bool stickEnabled = false;
     private bool killedDentist = false;
     private bool helpedBoy = false;
+    private bool ended = false;
 
     private SentenceController[] sentences;
 
@@ -52,6 +55,13 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
 
     private void Update()
     {
+        if (this.ended)
+        {
+            if (Input.GetButtonDown("Submit"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
         if (inventory.GetComponent<WordBank>().HaveWord("offkey") && !offkeySeparated)
         {
             this.SeparateOffkey();
@@ -62,7 +72,6 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             block.SetActive(false);
             blockRemoved = true;
             sentences[0].Lock();
-            Debug.Log("LOL" + this.sentences[2].GetWords()[0]);
         }
         // Sentence Two: "breath"
         if (this.sentences[1].GetWords()[0].Equals("breath"))
@@ -116,7 +125,9 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     void BeatLevel()
     {
         if (killedDentist && helpedBoy) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            oldText.SetActive(false);
+            endingText.SetActive(true);
+            this.ended = true;
         }
     }
 

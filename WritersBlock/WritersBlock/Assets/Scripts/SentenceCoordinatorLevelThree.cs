@@ -39,6 +39,8 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject movedWizard;
     public GameObject blankToHandWizardCup;
     public GameObject wizardNeedsCup;
+    public GameObject oldText;
+    public GameObject endingText;
 
 
     private SentenceController disappearSentence;
@@ -55,6 +57,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     private bool blockadeDestroyed = false;
     private bool bookInAir = false;
     private bool ladDead = false;
+    private bool ended = false;
 
     private SentenceController[] sentences;
 
@@ -68,7 +71,13 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     }
 
     private void Update() {
-
+        if (this.ended)
+        {
+            if (Input.GetButtonDown("Submit"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
         // Sentence One: "old"        
         if (this.sentences[0].GetWords()[0].Equals("old")) {
             KillLad();
@@ -143,8 +152,10 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         BeatLevel();
     }
 
-    void BeatLevel() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    void BeatLevel()
+    {
+        oldText.SetActive(false);
+        endingText.SetActive(true);
+        this.ended = true;
     }
-
 }

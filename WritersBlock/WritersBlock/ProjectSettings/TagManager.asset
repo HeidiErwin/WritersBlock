@@ -66,3 +66,6 @@ TagManager:
   - name: WallBeforeGarden
     uniqueID: 1275165141
     locked: 0
+  - name: Front
+    uniqueID: 3143065629
+    locked: 0

@@ -32,6 +32,11 @@ public class UIController : MonoBehaviour {
     {
         Application.Quit();
     }
+	
+	public void About()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 
 	public void StartGame(){
         Object.Destroy(startB);
@@ -50,6 +55,6 @@ public class UIController : MonoBehaviour {
 		source.Stop();
 		source.PlayOneShot(levelTransitionSound, 0.5f);
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Intro");
     }
 }

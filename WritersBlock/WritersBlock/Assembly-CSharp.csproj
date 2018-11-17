@@ -73,8 +73,11 @@
     <Compile Include="Assets\MegaBook\Scripts\MegaBookVisible.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TextMeshProMesh.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TypogenicMesh.cs" />
+    <Compile Include="Assets\Scripts\Credits.cs" />
     <Compile Include="Assets\Scripts\FilterController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Intro.cs" />
+    <Compile Include="Assets\Scripts\InventoryController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SentenceBlankController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />

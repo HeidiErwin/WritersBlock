@@ -29,9 +29,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject chestThought;
     public GameObject stickSentenceObject; // "I'm holding my ___ forever!"
     public GameObject stickStaticTextObject;
-    public GameObject chestBlankSentenceObject; 
 
-    private SentenceController chestBlankSentence;
     private SentenceController stickSentence;
 
     private bool blockRemoved = false;
@@ -48,7 +46,6 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         offWord.SetActive(false);
         keyWord.SetActive(false);
         stickSentenceObject.SetActive(false);
-        chestBlankSentence = chestBlankSentenceObject.GetComponent<SentenceController>();
         stickSentence = stickSentenceObject.GetComponent<SentenceController>();
 
     }
@@ -65,18 +62,21 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             block.SetActive(false);
             blockRemoved = true;
             sentences[0].Lock();
+            Debug.Log("LOL" + this.sentences[2].GetWords()[0]);
         }
         // Sentence Two: "breath"
         if (this.sentences[1].GetWords()[0].Equals("breath"))
         {
             dentist.GetComponent<SpriteRenderer>().sprite = deadDentist;
             killedDentist = true;
+            Debug.Log("dentist dead");
             BeatLevel();
             sentences[1].Lock();
         }
         // Sentence Three: "key"
-        if (chestBlankSentence.GetWords()[0].Equals("key") && blockRemoved)
+        if (this.sentences[2].GetWords()[0].Equals("key") && blockRemoved)
         {
+            Debug.Log("yay");
             chest.GetComponent<SpriteRenderer>().sprite = openChest;
             chest.transform.position = new Vector2(chest.transform.position.x, -3.0f);
             chestThought.SetActive(false);
@@ -93,7 +93,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
                 stickEnabled = true;
                 dentist.GetComponent<SpriteRenderer>().sprite = pointingDentist;
             }
-            chestBlankSentence.Lock();
+            this.sentences[2].Lock();
         }
         // Sentence Four: "stick" and "gum"
         if (this.sentences[3].GetWords()[0].Equals("stick") &&

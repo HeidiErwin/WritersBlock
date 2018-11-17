@@ -315,12 +315,9 @@
     <Compile Include="Assets\MegaBook\Scripts\MegaBookVisible.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TextMeshProMesh.cs" />
     <Compile Include="Assets\MegaBook\Scripts\TypogenicMesh.cs" />
-    <Compile Include="Assets\Scripts\About.cs" />
-    <Compile Include="Assets\Scripts\Exit.cs" />
     <Compile Include="Assets\Scripts\FilterController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\NoLongerUsed\FullscreenSprite.cs" />
-    <Compile Include="Assets\Scripts\NoLongerUsed\InventoryController.cs" />
+    <Compile Include="Assets\Scripts\InventoryController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SentenceBlankController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />
@@ -329,9 +326,6 @@
     <Compile Include="Assets\Scripts\SentenceCoordinatorLevelThree.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinatorLevelTwo.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinatorTestLevel.cs" />
-    <Compile Include="Assets\Scripts\SimplePlatformController.cs" />
-    <Compile Include="Assets\Scripts\SimplePlatformControllerTest.cs" />
-    <Compile Include="Assets\Scripts\StartPrototype.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\WordBank.cs" />
     <Compile Include="Assets\Scripts\WordController.cs" />

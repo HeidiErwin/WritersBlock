@@ -36,7 +36,7 @@ public class SentenceController : MonoBehaviour {
         for (int i = 1; i < children.Length; i++)
         {
             float x = center_pos + cumul_pos + widths[i] + offset;
-            children[i].position = new Vector2(x, transform.position.y);
+            children[i].position = new Vector3(x, transform.position.y, transform.position.z);
             cumul_pos += widths[i] * 2 + padding;
         }
     }

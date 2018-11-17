@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour {
             jump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel"))
         {
             SceneManager.LoadScene("Start_Screen");
         }

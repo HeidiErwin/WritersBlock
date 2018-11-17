@@ -16,9 +16,13 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     public GameObject crown; // Enabled upon poisoning
     public GameObject queen;
     public WordController pie; // Can be poisoned
+    public GameObject oldText;
+    public GameObject endingText;
 
     public Sprite poisonedPie;
     public Sprite deadQueen;
+
+    private bool ended;
 
     private SentenceController[] sentences;
 
@@ -26,10 +30,18 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     {
         crown.SetActive(false);
         sentences = GetComponentsInChildren<SentenceController>();
+        this.ended = false;
     }
 
     private void Update()
     {
+        if (this.ended)
+        {
+            if (Input.GetButtonDown("Submit"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
         // Get current value of all sentence blanks
         string[] queenBlanks = this.sentences[0].GetWords();
         string[] bushBlanks = this.sentences[1].GetWords();
@@ -88,7 +100,9 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
 
     void Beat_Level()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        oldText.SetActive(false);
+        endingText.SetActive(true);
+        this.ended = true;
     }
 
 }

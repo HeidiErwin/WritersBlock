@@ -56,7 +56,6 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     private bool bookInAir = false;
     private bool ladDead = false;
 
-
     private SentenceController[] sentences;
 
     private void Start() {
@@ -73,17 +72,20 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         // Sentence One: "old"        
         if (this.sentences[0].GetWords()[0].Equals("old")) {
             KillLad();
+          //  sentences[0].Lock();
         }
 
         // Sentence Two: "air" // AIR can take the place of either CUP or BOARD
         if ((this.sentences[1].GetWords()[0].Equals("air") && this.sentences[1].GetWords()[1].Equals(""))
             || (this.sentences[1].GetWords()[1].Equals("air") && this.sentences[1].GetWords()[0].Equals(""))) { 
              MakeBookFloat();
+           // sentences[1].Lock();
         }
 
         // Sentence Three: "cup"
         if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup")) {
             GiveWizardCup();
+           // handWizardCupSentence.Lock();
         }
 
         // Sentence Three: "block"
@@ -95,6 +97,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         if (blockadeDestroyed && sentenceAboutWork.GetWords()[0].Equals("on") &&
             sentenceAboutWork.GetWords()[1].Equals("board")) {
             WizardConvinced();
+          //  sentenceAboutWork.Lock();
         }
     }
 

@@ -47,7 +47,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         keyWord.SetActive(false);
         stickSentenceObject.SetActive(false);
         stickSentence = stickSentenceObject.GetComponent<SentenceController>();
-
+        stickSentence.Start();
     }
 
     private void Update()

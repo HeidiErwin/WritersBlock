@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour {
     private AudioSource source;
     public AudioClip menuSound;
     public AudioClip levelTransitionSound;
+    private MegaBookBuilder bkCtrl;
 
     // Use this for initialization
     void Start () {
@@ -24,9 +25,7 @@ public class UIController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 
     public void QuitGame()
     {
@@ -38,23 +37,45 @@ public class UIController : MonoBehaviour {
         SceneManager.LoadScene("Credits");
     }
 
-	public void StartGame(){
-        Object.Destroy(startB);
-        Object.Destroy(aboutB);
-        Object.Destroy(quitB);
-        var bkCtrl = GameObject.FindObjectOfType<MegaBookBuilder>();
+    
+
+    public void StartGame(){
+        startB.SetActive(false);
+        aboutB.SetActive(false);
+        quitB.SetActive(false);
+        //Object.Destroy(startB);
+        //Object.Destroy(aboutB);
+        //Object.Destroy(quitB);
+        bkCtrl = GameObject.FindObjectOfType<MegaBookBuilder>();
         _CamAnimator.SetTrigger ("GameStartZoom");
         bkCtrl.NextPage();
-        bkCtrl.NextPage();
-        StartCoroutine(Wait());
+        
+        //StartCoroutine(Wait());
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Submit"))
+        {
+            bkCtrl.NextPage();
+            StartCoroutine(Wait());
+        }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            bkCtrl.PrevPage();
+            startB.SetActive(true);
+            aboutB.SetActive(true);
+            quitB.SetActive(true);
+        }
     }
 
     private IEnumerator Wait()
     {
+
 		yield return new WaitForSeconds(1);
 		source.Stop();
 		source.PlayOneShot(levelTransitionSound, 0.5f);
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Level1");
     }
 }

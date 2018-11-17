@@ -7,7 +7,6 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
 {
 
     /**
-     * 
      * Sentence 0: The block is ON the chest.
      * Sentence 1: No! I'm holding my STICK forever
      * Sentence 2: [received key]
@@ -28,6 +27,12 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject offWord;
     public GameObject keyWord;
     public GameObject chestThought;
+    public GameObject stickSentenceObject; // "I'm holding my ___ forever!"
+    public GameObject stickStaticTextObject;
+    public GameObject chestBlankSentenceObject; 
+
+    private SentenceController chestBlankSentence;
+    private SentenceController stickSentence;
 
     private bool blockRemoved = false;
     private bool offkeySeparated = false;
@@ -42,6 +47,10 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         sentences = GetComponentsInChildren<SentenceController>();
         offWord.SetActive(false);
         keyWord.SetActive(false);
+        stickSentenceObject.SetActive(false);
+        chestBlankSentence = chestBlankSentenceObject.GetComponent<SentenceController>();
+        stickSentence = stickSentenceObject.GetComponent<SentenceController>();
+
     }
 
     private void Update()
@@ -66,22 +75,25 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             sentences[1].Lock();
         }
         // Sentence Three: "key"
-        if (this.sentences[2].GetWords()[0].Equals("key") && blockRemoved)
+        if (chestBlankSentence.GetWords()[0].Equals("key") && blockRemoved)
         {
             chest.GetComponent<SpriteRenderer>().sprite = openChest;
             chest.transform.position = new Vector2(chest.transform.position.x, -3.0f);
             chestThought.SetActive(false);
             if (!stickEnabled)
             {
-                foreach (SpriteRenderer sprite in sentences[1].GetComponentsInChildren<SpriteRenderer>())
-                {
-                    sprite.enabled = true;
-                }
-                sentences[1].GetComponentInChildren<BoxCollider2D>().enabled = true;
+                stickSentenceObject.SetActive(true);
+                stickStaticTextObject.SetActive(true);
+                //foreach (SpriteRenderer sprite in sentences[1].GetComponentsInChildren<SpriteRenderer>())
+                //{
+                //    sprite.enabled = true;
+                //}
+                //sentences[1].GetComponentInChildren<BoxCollider2D>().enabled = true;
                 stick.SetActive(true);
                 stickEnabled = true;
+                dentist.GetComponent<SpriteRenderer>().sprite = pointingDentist;
             }
-            sentences[2].Lock();
+            chestBlankSentence.Lock();
         }
         // Sentence Four: "stick" and "gum"
         if (this.sentences[3].GetWords()[0].Equals("stick") &&

@@ -116,7 +116,7 @@ TextureImporter:
         width: 1133
         height: 661
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,13 +131,13 @@ TextureImporter:
       name: Air_+_Breath_Words_1
       rect:
         serializedVersion: 2
-        x: 2550
+        x: 2699
         y: 1578
-        width: 2001
-        height: 876
+        width: 1844
+        height: 870
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 121, y: 0, z: 0, w: 35}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 549, y: 222, z: 419, w: 162}
       outline: []
       physicsShape: []
       tessellationDetail: 0

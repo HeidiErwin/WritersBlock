@@ -1678,7 +1678,7 @@ Prefab:
         type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 469103135}
     - target: {fileID: 1651842202197996, guid: 8ce4650bcbae502469f924f3a071f52b, type: 2}
       propertyPath: m_Layer
       value: 13

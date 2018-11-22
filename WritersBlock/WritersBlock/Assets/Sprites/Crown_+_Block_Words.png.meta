@@ -91,11 +91,11 @@ TextureImporter:
         serializedVersion: 2
         x: 1861
         y: 1612
-        width: 1136
-        height: 842
+        width: 1033
+        height: 747
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 49, w: 74}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -114,7 +114,7 @@ TextureImporter:
         width: 2217
         height: 754
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

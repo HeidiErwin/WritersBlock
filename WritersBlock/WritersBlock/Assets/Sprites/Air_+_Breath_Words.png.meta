@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 370
+  spritePixelsToUnits: 520
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,9 +131,9 @@ TextureImporter:
       name: Air_+_Breath_Words_1
       rect:
         serializedVersion: 2
-        x: 2699
+        x: 2725
         y: 1578
-        width: 1844
+        width: 1752
         height: 870
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

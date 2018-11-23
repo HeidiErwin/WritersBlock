@@ -148,6 +148,8 @@ MonoBehaviour:
   endingText: {fileID: 1030225330}
   poisonedPie: {fileID: 21300000, guid: a0eceb8b94934ad42a1ecc59aee74086, type: 3}
   deadQueen: {fileID: 21300000, guid: 77124ecfd08cd6d4ebaff2c3598e0e35, type: 3}
+  normalQueen: {fileID: 21300000, guid: d1543a2527cd8464194d1852a5e115ea, type: 3}
+  emptyHandedQueen: {fileID: 21300000, guid: e88d6b190a0ab834988203a61aada77f, type: 3}
 --- !u!4 &37975580
 Transform:
   m_ObjectHideFlags: 0

@@ -21,8 +21,11 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
 
     public Sprite poisonedPie;
     public Sprite deadQueen;
+    public Sprite normalQueen;
+    public Sprite emptyHandedQueen;
 
     private bool ended;
+    private bool queenAlive = true;
 
     private SentenceController[] sentences;
 
@@ -64,6 +67,16 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
                 this.KillQueen();
                 sentences[0].Lock();
                 break;
+            case "pie":
+                if (queenAlive) {
+                    queen.GetComponent<SpriteRenderer>().sprite = normalQueen; // queen holding pie
+                }
+                break;
+            default:
+                if (queenAlive) {
+                    queen.GetComponent<SpriteRenderer>().sprite = emptyHandedQueen;
+                }
+                break;
         }
     }
 
@@ -97,6 +110,7 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
 
     void KillQueen()
     {
+        queenAlive = false;
         queen.GetComponent<SpriteRenderer>().sprite = deadQueen;
         sentences[0].Lock();
         crown.SetActive(true);

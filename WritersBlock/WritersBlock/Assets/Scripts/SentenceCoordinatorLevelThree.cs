@@ -55,6 +55,8 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public Sprite lad2;
     public Sprite lad3;
     public Sprite lad4;
+    public Sprite wizardWithLemonade;
+
     private bool lemonadeConjured = false;
     private bool blockadeDestroyed = false;
     private bool bookInAir = false;
@@ -94,7 +96,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         }
 
         // Sentence Three: "cup"
-        if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup")) {
+        if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup") && !lemonadeConjured) {
             GiveWizardCup();
            // handWizardCupSentence.Lock();
         }
@@ -118,7 +120,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     }
 
     void GiveWizardCup() {
-        lemonade.SetActive(true);
+        StartCoroutine(AnimateLemonadeToWizardHand());
         lemonadeConjured = true;
         cupWordObject.SetActive(false);
         wizardNeedsCup.SetActive(false);
@@ -163,6 +165,14 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         lad.GetComponent<SpriteRenderer>().sprite = lad3;
         yield return new WaitForSeconds(1);
         lad.GetComponent<SpriteRenderer>().sprite = lad4;
+        yield break;
+    }
+
+    private IEnumerator AnimateLemonadeToWizardHand() {
+        lemonade.SetActive(true);
+        yield return new WaitForSeconds(2);
+        lemonade.SetActive(false);
+        movedWizard.GetComponent<SpriteRenderer>().sprite = wizardWithLemonade;
         yield break;
     }
 

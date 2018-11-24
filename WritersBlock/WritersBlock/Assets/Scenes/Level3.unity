@@ -6176,7 +6176,7 @@ SpriteRenderer:
   m_SortingLayerID: 555223453
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e8c5457b7f12c4c468d1f3ab7b4c6828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02538336a5e7ab24294f99c348c7c406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6194,8 +6194,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798215569}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.585328, y: -1.6723163, z: 9.914071}
-  m_LocalScale: {x: 0.054736, y: 0.054736, z: 0.054736}
+  m_LocalPosition: {x: 1.76, y: -1.87, z: 9.914071}
+  m_LocalScale: {x: -0.054736, y: 0.054736, z: 0.054736}
   m_Children: []
   m_Father: {fileID: 354795476}
   m_RootOrder: 4
@@ -13796,6 +13796,7 @@ MonoBehaviour:
   lad2: {fileID: 21300000, guid: 410cedb56d609ab47884f0b89f9a6ef2, type: 3}
   lad3: {fileID: 21300000, guid: 6449fe8559802d9408ffb2fb060da85d, type: 3}
   lad4: {fileID: 21300000, guid: 9a15353349e178344865db903fc8bf2f, type: 3}
+  wizardWithLemonade: {fileID: 21300000, guid: b599056b6e596554383f5f72ba3f280c, type: 3}
 --- !u!95 &1820003680
 Animator:
   serializedVersion: 3

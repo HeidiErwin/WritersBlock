@@ -51,8 +51,10 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     private WordController workWord;
     private WordController lemonWord;
 
-
-    public Sprite deadLad;
+    public Sprite lad1;
+    public Sprite lad2;
+    public Sprite lad3;
+    public Sprite lad4;
     private bool lemonadeConjured = false;
     private bool blockadeDestroyed = false;
     private bool bookInAir = false;
@@ -79,7 +81,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
             }
         }
         // Sentence One: "old"        
-        if (this.sentences[0].GetWords()[0].Equals("old")) {
+        if (this.sentences[0].GetWords()[0].Equals("old") && !ladDead) {
             KillLad();
           //  sentences[0].Lock();
         }
@@ -125,8 +127,8 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     }
 
     void KillLad() {
-        // TODO: show frame of lad aging & dying
-        lad.GetComponent<SpriteRenderer>().sprite = deadLad;
+        StartCoroutine(AnimateLadDeath());
+        //lad.GetComponent<SpriteRenderer>().sprite = deadLad;
         ladDead = true;
         ladSpeech.SetActive(false);
     }
@@ -150,6 +152,18 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     void WizardConvinced() { //TODO
         BeatLevel();
+    }
+
+    private IEnumerator AnimateLadDeath() {
+        yield return new WaitForSeconds(1);
+        lad.GetComponent<SpriteRenderer>().sprite = lad1;
+        yield return new WaitForSeconds(1);
+        lad.GetComponent<SpriteRenderer>().sprite = lad2;
+        yield return new WaitForSeconds(1);
+        lad.GetComponent<SpriteRenderer>().sprite = lad3;
+        yield return new WaitForSeconds(1);
+        lad.GetComponent<SpriteRenderer>().sprite = lad4;
+        yield break;
     }
 
     void BeatLevel()

@@ -5,6 +5,7 @@ TextureImporter:
     21300000: queenAteThe_0
     21300002: queenAteThe_1
     21300004: queenAteThe_2
+    21300006: queenAteThe_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -157,13 +158,33 @@ TextureImporter:
         width: 359
         height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 669fd458a6136eb4f90ce79eefc07e20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queenAteThe_3
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 173
+        width: 315
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2721dad4b481d48b90e17399c64f9e
       vertices: []
       indices: 
       edges: []

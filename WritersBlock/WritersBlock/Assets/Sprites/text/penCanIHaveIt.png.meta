@@ -15,6 +15,7 @@ TextureImporter:
     21300020: penCanIHaveIt_10
     21300022: penCanIHaveIt_11
     21300024: penCanIHaveIt_12
+    21300026: penCanIHaveIt_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -367,13 +368,33 @@ TextureImporter:
         width: 433
         height: 265
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 73ab284ad67f8e5479ce70767b946e57
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penCanIHaveIt_13
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 2362
+        width: 524
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79872b8d66f137245b58dd68bf7796ef
       vertices: []
       indices: 
       edges: []

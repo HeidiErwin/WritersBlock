@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public Sprite pointingDentist;
     public Sprite deadDentist;
     public Sprite openChest;
+    public Sprite openChestWithStick;
     public GameObject inventory;
     public GameObject offKeyWord;
     public GameObject offWord;
@@ -31,10 +33,13 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject stickStaticTextObject;
     public GameObject oldText; // disappears when level is beat
     public GameObject endingText; // displayed when level is beat
+    public GameObject stickInAir1;
+    public GameObject stickInAir2;
 
     private SentenceController stickSentence;
 
     private bool blockRemoved = false;
+    private bool stickRemoved = false;
     private bool offkeySeparated = false;
     private bool stickEnabled = false;
     private bool killedDentist = false;
@@ -83,11 +88,11 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             sentences[1].Lock();
         }
         // Sentence Three: "key"
-        if (this.sentences[2].GetWords()[0].Equals("key") && blockRemoved)
+        if (this.sentences[2].GetWords()[0].Equals("key") && blockRemoved && !stickRemoved)
         {
-            Debug.Log("yay");
-            chest.GetComponent<SpriteRenderer>().sprite = openChest;
-            chest.transform.position = new Vector2(chest.transform.position.x, -3.0f);
+            StartCoroutine(AnimateStickLeavingChest());
+            stickRemoved = true;
+            
             chestThought.SetActive(false);
             if (!stickEnabled)
             {
@@ -100,7 +105,6 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
                 //sentences[1].GetComponentInChildren<BoxCollider2D>().enabled = true;
                 stick.SetActive(true);
                 stickEnabled = true;
-                dentist.GetComponent<SpriteRenderer>().sprite = pointingDentist;
             }
             this.sentences[2].Lock();
         }
@@ -112,6 +116,21 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             BeatLevel();
             sentences[3].Lock();
         }
+    }
+
+    private IEnumerator AnimateStickLeavingChest() {
+        chest.GetComponent<SpriteRenderer>().sprite = openChestWithStick;
+        chest.transform.position = new Vector2(chest.transform.position.x, -3.0f);
+        yield return new WaitForSeconds(1);
+        chest.GetComponent<SpriteRenderer>().sprite = openChest;
+        stickInAir1.SetActive(true);
+        yield return new WaitForSeconds(1);
+        stickInAir1.SetActive(false);
+        stickInAir2.SetActive(true);
+        yield return new WaitForSeconds(1);
+        stickInAir2.SetActive(false);
+        dentist.GetComponent<SpriteRenderer>().sprite = pointingDentist;
+        yield break;
     }
 
     void SeparateOffkey() {    

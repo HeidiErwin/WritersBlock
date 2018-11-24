@@ -16,6 +16,7 @@ TextureImporter:
     21300022: level1words_11
     21300024: level1words_12
     21300026: level1words_13
+    21300028: level1words_14
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -388,13 +389,33 @@ TextureImporter:
         width: 613
         height: 245
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 6e2f3d9b6e16ae54aa59e053c6678322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1words_14
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1876
+        width: 146
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3051a30a5db90e4abc965cab30daf16
       vertices: []
       indices: 
       edges: []

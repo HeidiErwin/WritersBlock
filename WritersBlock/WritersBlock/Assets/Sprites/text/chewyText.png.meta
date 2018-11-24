@@ -15,6 +15,7 @@ TextureImporter:
     21300020: chewyText_10
     21300022: chewyText_11
     21300024: chewyText_12
+    21300026: chewyText_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -374,6 +375,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3209907571e43d74c8b08516fe096b0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chewyText_13
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 2493
+        width: 417
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100119d24821e9c4995c2f9e0fcf3dbb
       vertices: []
       indices: 
       edges: []

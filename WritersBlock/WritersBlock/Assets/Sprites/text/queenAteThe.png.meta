@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: queenAteThe_0
     21300002: queenAteThe_1
+    21300004: queenAteThe_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -143,6 +144,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 582d7381d5da43544b466d31226d9305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queenAteThe_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 125
+        width: 359
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669fd458a6136eb4f90ce79eefc07e20
       vertices: []
       indices: 
       edges: []

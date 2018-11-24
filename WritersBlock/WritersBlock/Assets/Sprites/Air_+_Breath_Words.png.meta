@@ -111,9 +111,9 @@ TextureImporter:
       name: Air_+_Breath_Words_0
       rect:
         serializedVersion: 2
-        x: 850
+        x: 858
         y: 710
-        width: 1133
+        width: 1125
         height: 661
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

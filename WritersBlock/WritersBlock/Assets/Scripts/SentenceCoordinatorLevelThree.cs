@@ -28,20 +28,28 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject lad;
     public GameObject ladSpeech;
     public GameObject floatingRecipeBook;
+    public GameObject disappearSentenceStaticPart; // "I'm going to make this LEMONade disappear"
     public GameObject disappearSentenceObject; // "I'm going to make this LEMONade disappear"
     public GameObject sentenceAboutWorkObject; // "I'm OFF WORK"
+    public GameObject ladThoughtSentenceObject; // "I'm so ____... I wish I could retire..."
+    public GameObject ladThoughtStaticObject; // "I'm so ____... I wish I could retire..."
     public GameObject offWordObject;
     public GameObject workWordObject;
     public GameObject cupWordObject;
+    public GameObject cupboardWord;
+    public GameObject cupWord;
+    public GameObject oldWord;
+    public GameObject boardWord;
     public GameObject lemonWordObject;
     public GameObject playerSpeech;
     public GameObject originalWizard;
+    public GameObject inventory;
     public GameObject movedWizard;
     public GameObject blankToHandWizardCup;
     public GameObject wizardNeedsCup;
     public GameObject oldText;
     public GameObject endingText;
-
+    public GameObject ladThoughtBubble;
 
     private SentenceController disappearSentence;
     private SentenceController sentenceAboutWork;
@@ -58,6 +66,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public Sprite wizardWithLemonade;
 
     private bool lemonadeConjured = false;
+    private bool cupboardSeparated = false;
     private bool blockadeDestroyed = false;
     private bool bookInAir = false;
     private bool ladDead = false;
@@ -72,6 +81,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         handWizardCupSentence = blankToHandWizardCup.GetComponent<SentenceController>();
         offWord = offWordObject.GetComponent<WordController>();
         workWord = workWordObject.GetComponent<WordController>();
+        this.sentences[1].GetWords()[0] = "cupboard";
     }
 
     private void Update() {
@@ -82,17 +92,20 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
+        if (inventory.GetComponent<WordBank>().HaveWord("cupboard") && !cupboardSeparated) {
+            this.SeparateCupboard();
+            cupboardSeparated = true;
+        }
         // Sentence One: "old"        
         if (this.sentences[0].GetWords()[0].Equals("old") && !ladDead) {
             KillLad();
-          //  sentences[0].Lock();
+            sentences[0].Lock();
         }
 
         // Sentence Two: "air" // AIR can take the place of either CUP or BOARD
-        if ((this.sentences[1].GetWords()[0].Equals("air") && this.sentences[1].GetWords()[1].Equals(""))
-            || (this.sentences[1].GetWords()[1].Equals("air") && this.sentences[1].GetWords()[0].Equals(""))) { 
+        if (this.sentences[1].GetWords()[0].Equals("air") && !bookInAir) { 
              MakeBookFloat();
-           // sentences[1].Lock();
+            sentences[1].Lock();
         }
 
         // Sentence Three: "cup"
@@ -125,6 +138,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         cupWordObject.SetActive(false);
         wizardNeedsCup.SetActive(false);
         disappearSentenceObject.SetActive(true);
+        disappearSentenceStaticPart.SetActive(true);
         lemonWordObject.SetActive(true);
     }
 
@@ -139,6 +153,11 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         playerSpeech.SetActive(true);
         sentenceAboutWorkObject.SetActive(true);
         offWordObject.SetActive(true);
+        ladThoughtBubble.SetActive(false);
+        ladThoughtSentenceObject.SetActive(false);
+        oldWord.SetActive(false);
+        ladThoughtStaticObject.SetActive(false);
+
         workWordObject.SetActive(true);
         // wizard responds "I'm OFF WORK"
     }
@@ -154,6 +173,13 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     void WizardConvinced() { //TODO
         BeatLevel();
+    }
+
+    void SeparateCupboard() {
+        cupboardWord.GetComponent<WordController>().InSentence = false;
+        cupboardWord.SetActive(false);
+        cupWord.SetActive(true);
+        boardWord.SetActive(true);
     }
 
     private IEnumerator AnimateLadDeath() {

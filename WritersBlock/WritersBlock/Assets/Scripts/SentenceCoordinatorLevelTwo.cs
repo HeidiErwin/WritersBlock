@@ -138,7 +138,6 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         offKeyWord.SetActive(false);
         offWord.SetActive(true);
         keyWord.SetActive(true);
-
     }
 
     void BeatLevel()

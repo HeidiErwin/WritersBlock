@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: okay_0
     21300002: okay_1
+    21300004: okay_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -116,7 +117,7 @@ TextureImporter:
         width: 628
         height: 347
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,13 +137,33 @@ TextureImporter:
         width: 114
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 27602b212c6f698478f899f3f6174339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: okay_2
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 513
+        width: 22
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f32e3a127f82754893cb0c0a138b2da
       vertices: []
       indices: 
       edges: []

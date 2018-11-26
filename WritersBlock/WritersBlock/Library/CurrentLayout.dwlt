@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 782
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 732
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 471}
+  m_MaxSize: {x: 14000, y: 14021}
   vertical: 0
-  controlID: 6219
+  controlID: 15377
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1095
     height: 732
-  m_MinSize: {x: 404, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 404, y: 471}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 6201
+  controlID: 15345
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 6202
+  controlID: 15346
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -366,10 +366,10 @@ MonoBehaviour:
     height: 437
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 92ff0000
-    m_LastClickedID: 65426
-    m_ExpandedIDs: 501efeff90b4ffffc0c2ffffa4f7ffffe6fbffff00000000243b0000923b0000f6560000ac5d0000ca5d00000e610000
+    scrollPos: {x: 0, y: 236}
+    m_SelectedIDs: 3c23fcff
+    m_LastClickedID: -253124
+    m_ExpandedIDs: b007feffc664feffa07ffeffe4c7feff8ac9feff14edffffbef3ffffb2f5ffffe6fbffff000000001036000074640000507000002482000042820000a2850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -388,7 +388,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Level4
+  - Level3
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -419,14 +419,14 @@ MonoBehaviour:
     height: 437
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1137.7599611698004
+  lastFramingTime: 11624.927590775113
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.5669631, y: -0.88221216, z: -3.6344862}
+    m_Target: {x: 3.005771, y: 1.8874141, z: 0.78970855}
     speed: 2
-    m_Value: {x: 0.5669631, y: -0.88221216, z: -3.6344862}
+    m_Value: {x: 3.005771, y: 1.8874141, z: 0.78970855}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -458,9 +458,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.766813
+    m_Target: 5.3379493
     speed: 2
-    m_Value: 14.766813
+    m_Value: 5.3379493
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -534,20 +534,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Characters
+    - Assets/Sprites/text
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Characters
+  - Assets/Sprites/text
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\heidi\Documents\Clubs\BRGD\WritersBlockProject\WritersBlock\WritersBlock\WritersBlock
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 100}
-    m_SelectedIDs: 78310000
-    m_LastClickedID: 12664
-    m_ExpandedIDs: 00000000282a0000de2a0000a42b0000d42b0000242d00009c2f000004310000fe320000e039000000ca9a3b
+    scrollPos: {x: 0, y: 180}
+    m_SelectedIDs: 0a310000
+    m_LastClickedID: 12554
+    m_ExpandedIDs: 00000000282a0000de2a0000a42b0000d42b0000242d0000a22f00000a31000008330000be34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -575,7 +575,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000282a0000de2a0000a42b0000d42b0000242d00009c2f000004310000fe320000e039000000ca9a3b
+    m_ExpandedIDs: 00000000282a0000de2a0000a42b0000d42b0000242d0000a22f00000a31000008330000be34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -602,8 +602,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300007c3d00006a4b0000a2310000f6370000da380000f4370000f8550000586000001c620000202f0000122f0000302c0000fac900008a2d0000de3f0000584e0000c42f00002e3900006c5a00002e2b00008231000000000000e0310000b2300000fc2c0000be300000ca2c0000ec2e0000485c000098300000b27100000a320000c4300000942a0000544601003c2b0000c2300000ca380000da300000762f000020320000682f0000982a0000322a000034300000cc3100003c3200006e2f0000be2e00003e3100001a2d0000c82c0000d030000094d8000092d80000d83200004e310000202d0000542c0000dc320000dcbf0000722a0000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300007c3d00006a4b0000a2310000f6370000da380000f4370000f8550000586000001c620000202f0000122f0000302c0000fac900008a2d0000de3f0000584e0000c42f00002e3900006c5a00002e2b00008231000000000000e0310000b2300000fc2c0000be300000ca2c0000ec2e0000485c000098300000b27100000a320000c4300000942a0000544601003c2b0000c2300000ca380000da300000762f000020320000682f0000982a0000322a000034300000cc3100003c3200006e2f0000be2e00003e3100001a2d0000c82c0000d030000094d8000092d80000d83200004e310000202d0000542c0000dc320000dcbf0000722a00005c2e0000f82e0000dc300000b2320000ba320000d22f00006c2e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -627,7 +627,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 240}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 115
 --- !u!114 &17

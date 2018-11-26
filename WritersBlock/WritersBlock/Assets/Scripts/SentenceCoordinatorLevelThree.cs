@@ -54,6 +54,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject quotesBeforeSorry; // for "Sorry, I'm off work"
     public GameObject ladThoughtBubble;
     public GameObject filter;
+    public GameObject wizardSpeechBubble;
 
 
     private SentenceController disappearSentence;
@@ -162,7 +163,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         ladThoughtSentenceObject.SetActive(false);
         oldWord.SetActive(false);
         ladThoughtStaticObject.SetActive(false);
-
+        wizardSpeechBubble.SetActive(true);
         workWordObject.SetActive(true);
         // wizard responds "I'm OFF WORK"
     }
@@ -199,6 +200,11 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         lad.GetComponent<SpriteRenderer>().sprite = lad3;
         yield return new WaitForSeconds(1);
         lad.GetComponent<SpriteRenderer>().sprite = lad4;
+        yield return new WaitForSeconds(1);
+        ladThoughtBubble.SetActive(false);
+        ladThoughtSentenceObject.SetActive(false);
+        ladThoughtStaticObject.SetActive(false);
+        oldWord.SetActive(false);
         yield break;
     }
 

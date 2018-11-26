@@ -50,6 +50,8 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject oldText;
     public GameObject endingText;
     public GameObject ladThoughtBubble;
+    public GameObject filter;
+
 
     private SentenceController disappearSentence;
     private SentenceController sentenceAboutWork;
@@ -205,6 +207,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     void BeatLevel()
     {
         oldText.SetActive(false);
+        filter.SetActive(false);
         endingText.SetActive(true);
         this.ended = true;
     }

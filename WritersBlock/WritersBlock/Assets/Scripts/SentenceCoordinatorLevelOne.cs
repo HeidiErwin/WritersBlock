@@ -23,6 +23,8 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     public Sprite deadQueen;
     public Sprite normalQueen;
     public Sprite emptyHandedQueen;
+    public GameObject filter;
+
 
     private bool ended;
     private bool queenAlive = true;
@@ -119,6 +121,7 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     void Beat_Level()
     {
         oldText.SetActive(false);
+        filter.SetActive(false);
         endingText.SetActive(true);
         this.ended = true;
     }

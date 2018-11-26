@@ -150,6 +150,7 @@ MonoBehaviour:
   deadQueen: {fileID: 21300000, guid: 77124ecfd08cd6d4ebaff2c3598e0e35, type: 3}
   normalQueen: {fileID: 21300000, guid: d1543a2527cd8464194d1852a5e115ea, type: 3}
   emptyHandedQueen: {fileID: 21300000, guid: e88d6b190a0ab834988203a61aada77f, type: 3}
+  filter: {fileID: 2045319496}
 --- !u!4 &37975580
 Transform:
   m_ObjectHideFlags: 0
@@ -8895,6 +8896,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ff31dc9148d8241bfdfd0946d912a0, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2045319496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1109167888295116, guid: 97ff31dc9148d8241bfdfd0946d912a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 2045319495}
 --- !u!1 &2061575188
 GameObject:
   m_ObjectHideFlags: 0

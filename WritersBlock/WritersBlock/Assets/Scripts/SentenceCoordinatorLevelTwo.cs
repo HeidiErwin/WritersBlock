@@ -20,6 +20,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject dentist;
     public GameObject chest;
     public GameObject stick;
+    public GameObject off;
     public Sprite pointingDentist;
     public Sprite deadDentist;
     public Sprite openChest;
@@ -35,6 +36,13 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject endingText; // displayed when level is beat
     public GameObject stickInAir1;
     public GameObject stickInAir2;
+    public GameObject droppedStick;
+    public GameObject chestText;
+    public GameObject chestTextStatic;
+    public GameObject promptToKillDentist;
+    public GameObject ladWantsChewy;
+    public GameObject alasText; // alas... the stick was not your pen
+    public GameObject filter;
 
     private SentenceController stickSentence;
 
@@ -82,7 +90,10 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         if (this.sentences[1].GetWords()[0].Equals("breath"))
         {
             dentist.GetComponent<SpriteRenderer>().sprite = deadDentist;
+            alasText.SetActive(true);
+            promptToKillDentist.SetActive(false);
             killedDentist = true;
+            droppedStick.SetActive(true);
             Debug.Log("dentist dead");
             BeatLevel();
             sentences[1].Lock();
@@ -92,7 +103,10 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         {
             StartCoroutine(AnimateStickLeavingChest());
             stickRemoved = true;
-            
+
+            chestText.SetActive(false);
+            chestTextStatic.SetActive(false);
+            off.SetActive(false);
             chestThought.SetActive(false);
             if (!stickEnabled)
             {
@@ -112,6 +126,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         if (this.sentences[3].GetWords()[0].Equals("stick") &&
             this.sentences[3].GetWords()[1].Equals("gum"))
         {
+            ladWantsChewy.SetActive(false);
             helpedBoy = true;
             BeatLevel();
             sentences[3].Lock();
@@ -130,6 +145,8 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         yield return new WaitForSeconds(1);
         stickInAir2.SetActive(false);
         dentist.GetComponent<SpriteRenderer>().sprite = pointingDentist;
+        yield return new WaitForSeconds(1);
+        promptToKillDentist.SetActive(true);
         yield break;
     }
 
@@ -144,6 +161,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     {
         if (killedDentist && helpedBoy) {
             oldText.SetActive(false);
+            filter.SetActive(false);
             endingText.SetActive(true);
             this.ended = true;
         }

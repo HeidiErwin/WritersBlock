@@ -49,6 +49,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject wizardNeedsCup;
     public GameObject oldText;
     public GameObject endingText;
+    public GameObject okayText; // for "Okay, I'm on board"
+    public GameObject sorryText; // for "Sorry, I'm off work"
+    public GameObject quotesBeforeSorry; // for "Sorry, I'm off work"
     public GameObject ladThoughtBubble;
     public GameObject filter;
 
@@ -125,7 +128,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         if (blockadeDestroyed && sentenceAboutWork.GetWords()[0].Equals("on") &&
             sentenceAboutWork.GetWords()[1].Equals("board")) {
             WizardConvinced();
-          //  sentenceAboutWork.Lock();
+            sentenceAboutWork.Lock();
         }
     }
 
@@ -174,6 +177,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     }
 
     void WizardConvinced() { //TODO
+        okayText.SetActive(true);
+        sorryText.SetActive(false);
+        quotesBeforeSorry.SetActive(false);
         BeatLevel();
     }
 

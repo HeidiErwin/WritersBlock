@@ -19,8 +19,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
      * Sentence 1: "The wizard’s book is in the CUPBOARD"
      * Sentence 2: [wizard received cup]
      * Sentence 3: "I'm going to make this LEMONade disappear"
-     * Sentence 4: "I'm OFF WORK"
-     * Sentence 5+: [no effects]
+     * Sentence 4: "I'm OFF"
+     * Sentence 5: "WORK." (part 2 of sentence 4)
+     * Sentence 6+: [no effects]
      * 
      **/
 
@@ -30,7 +31,8 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject floatingRecipeBook;
     public GameObject disappearSentenceStaticPart; // "I'm going to make this LEMONade disappear"
     public GameObject disappearSentenceObject; // "I'm going to make this LEMONade disappear"
-    public GameObject sentenceAboutWorkObject; // "I'm OFF WORK"
+    public GameObject sentenceAboutWorkObject; // "I'm OFF"
+    public GameObject sentenceAboutWorkPart2Object; // "WORK"
     public GameObject ladThoughtSentenceObject; // "I'm so ____... I wish I could retire..."
     public GameObject ladThoughtStaticObject; // "I'm so ____... I wish I could retire..."
     public GameObject offWordObject;
@@ -40,6 +42,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject cupWord;
     public GameObject oldWord;
     public GameObject boardWord;
+    public GameObject blockWord;
     public GameObject lemonWordObject;
     public GameObject playerSpeech;
     public GameObject originalWizard;
@@ -59,6 +62,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     private SentenceController disappearSentence;
     private SentenceController sentenceAboutWork;
+    private SentenceController sentenceAboutWorkPart2;
     private SentenceController handWizardCupSentence;
 
     private WordController offWord;
@@ -84,6 +88,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         sentences = GetComponentsInChildren<SentenceController>();
         disappearSentence = disappearSentenceObject.GetComponent<SentenceController>();
         sentenceAboutWork = sentenceAboutWorkObject.GetComponent<SentenceController>();
+        sentenceAboutWorkPart2 = sentenceAboutWorkPart2Object.GetComponent<SentenceController>();
         handWizardCupSentence = blankToHandWizardCup.GetComponent<SentenceController>();
         offWord = offWordObject.GetComponent<WordController>();
         workWord = workWordObject.GetComponent<WordController>();
@@ -127,7 +132,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         }
         // Sentence Four: "on" and "board"
         if (blockadeDestroyed && sentenceAboutWork.GetWords()[0].Equals("on") &&
-            sentenceAboutWork.GetWords()[1].Equals("board")) {
+            sentenceAboutWorkPart2.GetWords()[0].Equals("board")) {
             WizardConvinced();
             sentenceAboutWork.Lock();
         }
@@ -158,6 +163,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     void PlayerAsksForWizardsHelp() {
         playerSpeech.SetActive(true);
         sentenceAboutWorkObject.SetActive(true);
+        sentenceAboutWorkPart2Object.SetActive(true);
         offWordObject.SetActive(true);
         ladThoughtBubble.SetActive(false);
         ladThoughtSentenceObject.SetActive(false);
@@ -218,6 +224,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     void BeatLevel()
     {
+        disappearSentenceObject.SetActive(false);
+        disappearSentenceStaticPart.SetActive(false);
+        blockWord.SetActive(false);
         oldText.SetActive(false);
         filter.SetActive(false);
         endingText.SetActive(true);

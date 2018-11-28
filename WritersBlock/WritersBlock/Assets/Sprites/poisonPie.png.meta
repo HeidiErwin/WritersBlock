@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: poisonPie_0
     21300002: poisonPie_1
+    21300004: poisonPie_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -116,7 +117,7 @@ TextureImporter:
         width: 962
         height: 773
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,13 +137,33 @@ TextureImporter:
         width: 747
         height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 1bed7d440e9d25b40a794215a8b7df57
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poisonPie_2
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 633
+        width: 86
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3aa86c8e4a1b647a4293b72d802807
       vertices: []
       indices: 
       edges: []

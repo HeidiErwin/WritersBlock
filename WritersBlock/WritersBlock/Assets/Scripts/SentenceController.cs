@@ -24,6 +24,7 @@ public class SentenceController : MonoBehaviour {
         {
             if (children[i].GetComponent<SentenceBlankController>())
             {
+                //widths[i] = children[i].GetComponent<SpriteRenderer>().bounds.size.x / 2;
                 widths[i] = children[i].GetComponent<SentenceBlankController>().GetSize() / 2;
             }
             else

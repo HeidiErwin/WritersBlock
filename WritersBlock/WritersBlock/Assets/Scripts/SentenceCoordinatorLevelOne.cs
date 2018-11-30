@@ -18,21 +18,25 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     public WordController pie; // Can be poisoned
     public GameObject oldText;
     public GameObject endingText;
+    public GameObject dentist;
 
     public Sprite poisonedPie;
+    public Sprite happyDentist;
     public Sprite deadQueen;
     public Sprite normalQueen;
     public Sprite emptyHandedQueen;
     public GameObject filter;
-
+    private PlayerController player;
 
     private bool ended;
     private bool queenAlive = true;
+    private bool queenDeathSoundPlayed = false;
 
     private SentenceController[] sentences;
 
     private void Start()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         crown.SetActive(false);
         sentences = GetComponentsInChildren<SentenceController>();
         this.ended = false;
@@ -114,12 +118,18 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     {
         queenAlive = false;
         queen.GetComponent<SpriteRenderer>().sprite = deadQueen;
+        if (!queenDeathSoundPlayed) {
+            player.PlayDeathSound();
+            queenDeathSoundPlayed = true;
+        }
         sentences[0].Lock();
         crown.SetActive(true);
     }
 
     void Beat_Level()
     {
+        dentist.GetComponent<SpriteRenderer>().sprite = happyDentist;
+        crown.SetActive(false);
         oldText.SetActive(false);
         filter.SetActive(false);
         endingText.SetActive(true);

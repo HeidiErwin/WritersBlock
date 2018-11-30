@@ -10,7 +10,11 @@ public class UIController : MonoBehaviour {
 	public Animator _CamAnimator;
     public GameObject startB;
     public GameObject aboutB;
-    public GameObject quitB;
+    public GameObject quitB;   
+    public GameObject writersBlockTitle;
+    public GameObject gamePremiseText;
+    private bool onFirstPage = true;
+
     private AudioSource source;
     public AudioClip menuSound;
     public AudioClip levelTransitionSound;
@@ -23,10 +27,7 @@ public class UIController : MonoBehaviour {
         source.clip = menuSound;
         source.Play(0);
     }
-	
-	// Update is called once per frame
-	
-
+   
     public void QuitGame()
     {
         Application.Quit();
@@ -37,12 +38,11 @@ public class UIController : MonoBehaviour {
         SceneManager.LoadScene("Credits");
     }
 
-    
-
     public void StartGame(){
         startB.SetActive(false);
         aboutB.SetActive(false);
         quitB.SetActive(false);
+        writersBlockTitle.SetActive(false);
         //Object.Destroy(startB);
         //Object.Destroy(aboutB);
         //Object.Destroy(quitB);
@@ -50,7 +50,7 @@ public class UIController : MonoBehaviour {
         _CamAnimator.SetTrigger ("GameStartZoom");
         bkCtrl.NextPage();
         
-        //StartCoroutine(Wait());
+        StartCoroutine(WaitToDisplayPremiseText());
     }
 
     void Update()
@@ -58,6 +58,10 @@ public class UIController : MonoBehaviour {
         if (Input.GetButtonDown("Submit"))
         {
             bkCtrl.NextPage();
+            if (onFirstPage) {
+                gamePremiseText.SetActive(false);
+                onFirstPage = false;
+            }
             StartCoroutine(Wait());
         }
         if (Input.GetButtonDown("Cancel"))
@@ -71,11 +75,17 @@ public class UIController : MonoBehaviour {
 
     private IEnumerator Wait()
     {
-
 		yield return new WaitForSeconds(1);
 		source.Stop();
 		source.PlayOneShot(levelTransitionSound, 0.5f);
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Level1");
     }
+
+    private IEnumerator WaitToDisplayPremiseText() {
+        yield return new WaitForSeconds(.8f);
+        gamePremiseText.SetActive(true);
+        yield break;
+    }
+
 }

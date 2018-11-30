@@ -43,6 +43,8 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject ladWantsChewy;
     public GameObject alasText; // alas... the stick was not your pen
     public GameObject filter;
+    private PlayerController player;
+
 
     private SentenceController stickSentence;
 
@@ -53,11 +55,13 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     private bool killedDentist = false;
     private bool helpedBoy = false;
     private bool ended = false;
+    private bool dentistDeathSoundPlayed = false;
 
     private SentenceController[] sentences;
 
     private void Start()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         sentences = GetComponentsInChildren<SentenceController>();
         offWord.SetActive(false);
         keyWord.SetActive(false);
@@ -93,6 +97,10 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             alasText.SetActive(true);
             promptToKillDentist.SetActive(false);
             killedDentist = true;
+            if (!dentistDeathSoundPlayed) {
+                player.PlayDeathSound();
+                dentistDeathSoundPlayed = true;
+            }
             droppedStick.SetActive(true);
             Debug.Log("dentist dead");
             BeatLevel();

@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour {
     public AudioClip jumpSound;
     public AudioClip walkSound;
     public AudioClip backgroundSound;
+    public AudioClip backgroundSoundEvil;
 
+    public bool isLevel4 = false;
     private bool grounded = false;
     private Animator anim;
     private Rigidbody2D rb2d;
@@ -60,7 +62,11 @@ public class PlayerController : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         source.loop = true;
-        source.clip = backgroundSound;
+        if (!isLevel4) {
+            source.clip = backgroundSound;
+        } else {
+            source.clip = backgroundSoundEvil;
+        }
         source.Play(0);
     }
 
@@ -145,6 +151,11 @@ public class PlayerController : MonoBehaviour {
 
     public int GetPage() {
         return page;
+    }
+
+    public void PlayDeathSound() {
+        source.PlayOneShot(deathSound, 1.0f);
+
     }
 
 }

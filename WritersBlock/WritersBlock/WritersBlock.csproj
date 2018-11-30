@@ -324,6 +324,7 @@
     <Compile Include="Assets\Scripts\SentenceBlankController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinator.cs" />
+    <Compile Include="Assets\Scripts\SentenceCoordinatorLevel4.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinatorLevelOne.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinatorLevelThree.cs" />
     <Compile Include="Assets\Scripts\SentenceCoordinatorLevelTwo.cs" />

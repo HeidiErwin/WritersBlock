@@ -68,6 +68,8 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     private WordController offWord;
     private WordController workWord;
     private WordController lemonWord;
+    private PlayerController player;
+
 
     public Sprite lad1;
     public Sprite lad2;
@@ -81,10 +83,12 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     private bool bookInAir = false;
     private bool ladDead = false;
     private bool ended = false;
+    private bool ladDeathSoundPlayed = false;
 
     private SentenceController[] sentences;
 
     private void Start() {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         sentences = GetComponentsInChildren<SentenceController>();
         disappearSentence = disappearSentenceObject.GetComponent<SentenceController>();
         sentenceAboutWork = sentenceAboutWorkObject.GetComponent<SentenceController>();
@@ -109,6 +113,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         }
         // Sentence One: "old"        
         if (this.sentences[0].GetWords()[0].Equals("old") && !ladDead) {
+           
             KillLad();
             sentences[0].Lock();
         }
@@ -154,6 +159,10 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     }
 
     void KillLad() {
+        if (!ladDeathSoundPlayed) {
+            player.PlayDeathSound();
+            ladDeathSoundPlayed = true;
+        }
         StartCoroutine(AnimateLadDeath());
         //lad.GetComponent<SpriteRenderer>().sprite = deadLad;
         ladDead = true;

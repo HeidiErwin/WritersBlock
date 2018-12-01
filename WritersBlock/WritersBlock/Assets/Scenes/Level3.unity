@@ -12055,7 +12055,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "The dentist is enjoying his break\nso he ignores your plea. \nChange his
+  m_Text: "The wizard is enjoying his break\nso he ignores your plea. \nChange his
     words to make him agree!"
 --- !u!222 &1259251311
 CanvasRenderer:

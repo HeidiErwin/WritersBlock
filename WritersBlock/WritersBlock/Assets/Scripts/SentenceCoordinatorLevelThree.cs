@@ -98,6 +98,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         sentenceAboutWork = sentenceAboutWorkObject.GetComponent<SentenceController>();
         sentenceAboutWorkPart2 = sentenceAboutWorkPart2Object.GetComponent<SentenceController>();
         handWizardCupSentence = blankToHandWizardCup.GetComponent<SentenceController>();
+        blankToHandWizardCup.SetActive(false); // fix level 3 bug
         offWord = offWordObject.GetComponent<WordController>();
         workWord = workWordObject.GetComponent<WordController>();
         this.sentences[1].GetWords()[0] = "cupboard";

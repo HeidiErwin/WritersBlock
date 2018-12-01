@@ -41,6 +41,12 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject chestTextStatic;
     public GameObject promptToKillDentist;
     public GameObject ladWantsChewy;
+    public GameObject hintBooksOffChest;
+    public GameObject hintChestLocked;
+    public GameObject hintBreathTakeAway;
+    public GameObject hintGum;
+
+
     public GameObject alasText; // alas... the stick was not your pen
     public GameObject filter;
     private PlayerController player;
@@ -62,6 +68,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player.currentHint = hintBooksOffChest;
         sentences = GetComponentsInChildren<SentenceController>();
         offWord.SetActive(false);
         keyWord.SetActive(false);
@@ -87,6 +94,9 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         if (this.sentences[0].GetWords()[0].Equals("off"))
         {
             block.SetActive(false);
+            if (!blockRemoved) {
+                player.currentHint = hintChestLocked;
+            }
             blockRemoved = true;
             sentences[0].Lock();
         }
@@ -94,6 +104,9 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         if (this.sentences[1].GetWords()[0].Equals("breath"))
         {
             dentist.GetComponent<SpriteRenderer>().sprite = deadDentist;
+            if (!helpedBoy) {
+                player.currentHint = hintGum;
+            }
             alasText.SetActive(true);
             promptToKillDentist.SetActive(false);
             killedDentist = true;
@@ -111,6 +124,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         {
             StartCoroutine(AnimateStickLeavingChest());
             stickRemoved = true;
+            player.currentHint = hintBreathTakeAway;
 
             chestText.SetActive(false);
             chestTextStatic.SetActive(false);

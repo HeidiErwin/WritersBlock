@@ -19,6 +19,8 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     public GameObject oldText;
     public GameObject endingText;
     public GameObject dentist;
+    public GameObject hintToKillQueen;
+    public GameObject hintAboutCrown;
 
     public Sprite poisonedPie;
     public Sprite happyDentist;
@@ -37,6 +39,7 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player.currentHint = hintToKillQueen;
         crown.SetActive(false);
         sentences = GetComponentsInChildren<SentenceController>();
         this.ended = false;
@@ -117,6 +120,7 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     void KillQueen()
     {
         queenAlive = false;
+        player.currentHint = hintAboutCrown;
         queen.GetComponent<SpriteRenderer>().sprite = deadQueen;
         if (!queenDeathSoundPlayed) {
             player.PlayDeathSound();

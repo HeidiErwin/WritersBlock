@@ -58,6 +58,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject ladThoughtBubble;
     public GameObject filter;
     public GameObject wizardSpeechBubble;
+    public GameObject hintToDestroyBlockade;
+    public GameObject hintOnBoard;
+    public GameObject hintBookInAir;
 
 
     private SentenceController disappearSentence;
@@ -89,6 +92,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     private void Start() {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player.currentHint = hintBookInAir;
         sentences = GetComponentsInChildren<SentenceController>();
         disappearSentence = disappearSentenceObject.GetComponent<SentenceController>();
         sentenceAboutWork = sentenceAboutWorkObject.GetComponent<SentenceController>();
@@ -127,12 +131,14 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         // Sentence Three: "cup"
         if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup") && !lemonadeConjured) {
             GiveWizardCup();
+            
            // handWizardCupSentence.Lock();
         }
 
         // Sentence Three: "block"
         if (!blockadeDestroyed && lemonadeConjured && disappearSentence.GetWords()[0].Equals("block")) {
             DestroyBlockade();
+            player.currentHint = hintOnBoard;
             PlayerAsksForWizardsHelp();
         }
         // Sentence Four: "on" and "board"
@@ -150,6 +156,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
 
     void GiveWizardCup() {
         StartCoroutine(AnimateLemonadeToWizardHand());
+        if (!lemonadeConjured) {
+            player.currentHint = hintToDestroyBlockade;
+        }
         lemonadeConjured = true;
         cupWordObject.SetActive(false);
         wizardNeedsCup.SetActive(false);

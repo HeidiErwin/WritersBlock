@@ -23,11 +23,14 @@ public class PlayerController : MonoBehaviour {
 
     public bool isLevel4 = false;
     private bool grounded = false;
+    private bool hintShowing = false;
     private Animator anim;
     private Rigidbody2D rb2d;
     private Collider2D collider;
 
     public GameObject inventory;
+    public GameObject hintOverlay;
+    public GameObject currentHint;
     public LayerMask groundLayer;
     public LayerMask wordLayer;
     private float walkSoundStartTime = 0f;
@@ -102,6 +105,20 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Cancel"))
         {
             SceneManager.LoadScene("Start_Screen");
+        }
+
+        if (Input.GetKeyDown(KeyCode.H)) {
+            if (hintShowing) {
+                if (currentHint) {
+                    currentHint.SetActive(false);
+                }
+                hintOverlay.SetActive(false);
+                hintShowing = false;
+            } else {
+                hintOverlay.SetActive(true);
+                currentHint.SetActive(true);
+                hintShowing = true;
+            }
         }
     }
 

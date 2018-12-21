@@ -34,7 +34,7 @@ public class WordDraggable : MonoBehaviour {
     private void OnMouseDown()
     {
         source.PlayOneShot(wordClickSound, 0.5f);
-        positionBeforeMove = new Vector3(this.transform.position.x, this.transform.position.y);
+        positionBeforeMove = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         pageBeforeDrag = controller.GetPage();
         if (OnSamePageAsPlayer) {
             gameObject.layer = 10;

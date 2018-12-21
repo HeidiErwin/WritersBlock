@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour {
             if (inventoryLeft) {
                 inventoryLeft = false;
                 inventory.GetComponent<WordBank>().SetPage(2);
-                inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
+                inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, inventory.transform.position.z), Quaternion.identity);
             }
         }
         if (transform.position.x <= 0)
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour {
             if (!inventoryLeft) {
                 inventoryLeft = true;
                 inventory.GetComponent<WordBank>().SetPage(1);
-                inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, transform.position.z), Quaternion.identity);
+                inventory.transform.SetPositionAndRotation(new Vector3(-inventory.transform.position.x, inventory.transform.position.y, inventory.transform.position.z), Quaternion.identity);
             }
         }
 		if (Input.GetButtonDown("Jump") && IsGrounded())

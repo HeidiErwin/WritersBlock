@@ -29,6 +29,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject lad;
     public GameObject ladSpeech;
     public GameObject floatingRecipeBook;
+    public GameObject theBookIsInTheAirPart1;
+    public GameObject theBookIsInTheAirPart2; // "The book is in the ____"
+    public GameObject theBookIsInTheAirPart3;
     public GameObject disappearSentenceStaticPart; // "I'm going to make this LEMONade disappear"
     public GameObject disappearSentenceObject; // "I'm going to make this LEMONade disappear"
     public GameObject sentenceAboutWorkObject; // "I'm OFF"
@@ -41,6 +44,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     public GameObject cupboardWord;
     public GameObject cupWord;
     public GameObject oldWord;
+    public GameObject airWord;
     public GameObject boardWord;
     public GameObject blockWord;
     public GameObject lemonWordObject;
@@ -72,7 +76,6 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     private WordController workWord;
     private WordController lemonWord;
     private PlayerController player;
-
 
     public Sprite lad1;
     public Sprite lad2;
@@ -132,7 +135,6 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         // Sentence Three: "cup"
         if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup") && !lemonadeConjured) {
             GiveWizardCup();
-            
            // handWizardCupSentence.Lock();
         }
 
@@ -166,6 +168,10 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         disappearSentenceObject.SetActive(true);
         disappearSentenceStaticPart.SetActive(true);
         lemonWordObject.SetActive(true);
+        airWord.SetActive(false);
+        theBookIsInTheAirPart1.SetActive(false);
+        theBookIsInTheAirPart2.SetActive(false);
+        theBookIsInTheAirPart3.SetActive(false);
     }
 
     void KillLad() {

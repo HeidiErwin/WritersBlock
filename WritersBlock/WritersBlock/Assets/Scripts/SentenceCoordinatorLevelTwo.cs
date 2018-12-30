@@ -30,6 +30,10 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject offWord;
     public GameObject keyWord;
     public GameObject chestThought;
+    public GameObject birdBox;
+    public GameObject birdsSingingSentence;
+    public GameObject gumSourceSentencePart1; // the sentence where the player gets the GUM word
+    public GameObject gumSourceSentencePart2; // the sentence where the player gets the GUM word
     public GameObject stickSentenceObject; // "I'm holding my ___ forever!"
     public GameObject stickStaticTextObject;
     public GameObject oldText; // disappears when level is beat
@@ -46,11 +50,9 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
     public GameObject hintBreathTakeAway;
     public GameObject hintGum;
 
-
     public GameObject alasText; // alas... the stick was not your pen
     public GameObject filter;
     private PlayerController player;
-
 
     private SentenceController stickSentence;
 
@@ -127,6 +129,8 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             player.currentHint = hintBreathTakeAway;
 
             chestText.SetActive(false);
+            birdsSingingSentence.SetActive(false);
+            birdBox.SetActive(false);
             chestTextStatic.SetActive(false);
             off.SetActive(false);
             chestThought.SetActive(false);
@@ -149,6 +153,8 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             this.sentences[3].GetWords()[1].Equals("gum"))
         {
             ladWantsChewy.SetActive(false);
+            gumSourceSentencePart1.SetActive(false);
+            gumSourceSentencePart2.SetActive(false);
             helpedBoy = true;
             BeatLevel();
             sentences[3].Lock();

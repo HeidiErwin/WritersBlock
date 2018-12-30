@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1234,6 +1234,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &81549959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1545436588519604, guid: 3725dca7e582bf348b6dddb5fbde227e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1036019711}
 --- !u!1 &84999489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,7 +4635,6 @@ Transform:
   - {fileID: 2661460}
   - {fileID: 1286603550}
   - {fileID: 178262255}
-  - {fileID: 1718037582}
   - {fileID: 819119981}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -7771,7 +7775,7 @@ Transform:
   - {fileID: 956515864}
   - {fileID: 1003379137}
   m_Father: {fileID: 436496148}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &829650878
 GameObject:
@@ -10388,7 +10392,7 @@ SpriteRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036538493}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -10416,7 +10420,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830347157
   m_SortingLayer: 6
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5adaf42b621b6a147a1ebc9d5c5e42cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15251,6 +15255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   padding: 0
+--- !u!1 &1597509507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1319558660762046, guid: 07857941b75e7b04e9bd809d436697bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 755645510}
 --- !u!1 &1605904215
 GameObject:
   m_ObjectHideFlags: 0
@@ -16360,11 +16369,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1718037580}
   m_LocalRotation: {x: -0, y: -0, z: 0.013211465, w: 0.9999128}
-  m_LocalPosition: {x: -3.8291397, y: 2.6852388, z: 3.5414486}
-  m_LocalScale: {x: 0.6420379, y: 1.0850871, z: 0.761}
+  m_LocalPosition: {x: 0.434289, y: 0.02804306, z: 3.6161022}
+  m_LocalScale: {x: 0.7133755, y: 1.2056521, z: 0.761}
   m_Children: []
-  m_Father: {fileID: 436496148}
-  m_RootOrder: 9
+  m_Father: {fileID: 446095573}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.514}
 --- !u!1 &1718890591
 GameObject:
@@ -17403,6 +17412,9 @@ MonoBehaviour:
   lad: {fileID: 1192657656}
   ladSpeech: {fileID: 1038491062}
   floatingRecipeBook: {fileID: 2035582157}
+  theBookIsInTheAirPart1: {fileID: 1596022337}
+  theBookIsInTheAirPart2: {fileID: 1998639607}
+  theBookIsInTheAirPart3: {fileID: 1597509507}
   disappearSentenceStaticPart: {fileID: 1286603549}
   disappearSentenceObject: {fileID: 1067220034}
   sentenceAboutWorkObject: {fileID: 505581449}
@@ -17415,6 +17427,7 @@ MonoBehaviour:
   cupboardWord: {fileID: 1883074493}
   cupWord: {fileID: 2006716584}
   oldWord: {fileID: 939258332}
+  airWord: {fileID: 81549959}
   boardWord: {fileID: 250036883}
   blockWord: {fileID: 183461765}
   lemonWordObject: {fileID: 1932148201}
@@ -18429,12 +18442,12 @@ Prefab:
     - target: {fileID: 224401097925233000, guid: 3725dca7e582bf348b6dddb5fbde227e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 6.69
+      value: 6.59
       objectReference: {fileID: 0}
     - target: {fileID: 224401097925233000, guid: 3725dca7e582bf348b6dddb5fbde227e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 224401097925233000, guid: 3725dca7e582bf348b6dddb5fbde227e,
         type: 2}

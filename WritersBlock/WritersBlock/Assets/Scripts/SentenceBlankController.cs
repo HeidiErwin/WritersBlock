@@ -12,6 +12,8 @@ public class SentenceBlankController : MonoBehaviour {
     private bool locked = false;
     private bool firstCheck = true;
 
+    private GameController gameCtrl;
+
     private void Start()
     {
         sentence = this.transform.parent.GetComponent<SentenceController>();
@@ -19,6 +21,7 @@ public class SentenceBlankController : MonoBehaviour {
         if (GetComponent<SpriteRenderer>()) {
             this.size = GetComponent<SpriteRenderer>().bounds.size.x; // TODO decide if fixed size of blanks or based off sprite
         }
+       gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     private void Update()
@@ -33,6 +36,10 @@ public class SentenceBlankController : MonoBehaviour {
                 this.size = GetComponent<SpriteRenderer>().bounds.size.x; // this.start_size;
             }
             sentence.RealignWords();
+        } else if ((word == null) || !word.InSentence) {
+            if (GetComponent<SpriteRenderer>()) {
+                GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
     }
 
@@ -40,20 +47,27 @@ public class SentenceBlankController : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0) && !this.locked && (collision.GetComponent<WordDraggable>().OnSamePageAsPlayer || firstCheck))
         {
-            if (word != null)
+            if (word != null) // if there's already a word in the blank, knock it out to above the blank
             {
                 word.transform.position = new Vector3(this.transform.position.x, 
                     this.transform.position.y + word.transform.GetComponent<SpriteRenderer>().bounds.size.y, word.transform.position.z);
+                this.word = null;
             }
-            if (GetComponent<SpriteRenderer>() && word) {
-                GetComponent<SpriteRenderer>().enabled = false;
-            }
+           
             WordController colliderWord = collision.transform.GetComponent<WordController>();
             word = colliderWord;
-            word.InSentence = true;
             word.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, word.transform.position.z);
+
+            if (word && !word.InSentence) {
+                word.InSentence = true;
+                if (GetComponent<SpriteRenderer>()) { // hide blank sprite
+                    GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
+
             this.size = word.transform.GetComponent<SpriteRenderer>().bounds.size.x;
             sentence.RealignWords();
+
         }
         firstCheck = false;
     }

@@ -135,7 +135,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         // Sentence Three: "cup"
         if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup") && !lemonadeConjured) {
             GiveWizardCup();
-           // handWizardCupSentence.Lock();
+            handWizardCupSentence.Lock();
         }
 
         // Sentence Three: "block"
@@ -149,6 +149,7 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
             sentenceAboutWorkPart2.GetWords()[0].Equals("board")) {
             WizardConvinced();
             sentenceAboutWork.Lock();
+            sentenceAboutWorkPart2.Lock();
         }
     }
 

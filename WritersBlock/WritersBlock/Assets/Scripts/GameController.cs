@@ -10,7 +10,8 @@ public class GameController : MonoBehaviour {
 
     public PlayerController player;
 
-	void Start () {
+
+    void Start () {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
 	}
 

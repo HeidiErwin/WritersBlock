@@ -22,7 +22,7 @@ public class SentenceCoordinatorLevel4 : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetButtonDown("Submit")) {
+        if (Input.GetKeyDown(KeyCode.Return)) {
             frame++;
             UpdateScreen();
         }

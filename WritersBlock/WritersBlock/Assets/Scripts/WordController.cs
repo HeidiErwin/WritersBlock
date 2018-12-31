@@ -7,6 +7,9 @@ public class WordController : MonoBehaviour {
     public string text;
     [SerializeField] private int page = 1; //either 1 or 2, for left / right page respectively
 
+    public int numBlanksOver = 0; // this is to address a problem where when a word is dropped on two blanks, and both blank sprites disappear even though the word only enters one blank
+    // numBlanksOver checks how many blanks the word the player holds is currently over
+
     public bool InSentence { get; set; }
 
     public string GetText()

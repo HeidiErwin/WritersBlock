@@ -21,6 +21,8 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     public GameObject dentist;
     public GameObject hintToKillQueen;
     public GameObject hintAboutCrown;
+    public bool berryPoisonedSoundPlayed = false;
+    public bool crownGivenSoundPlayed = false;
 
     public Sprite poisonedPie;
     public Sprite happyDentist;
@@ -115,7 +117,12 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     {
         pie.GetComponent<SpriteRenderer>().sprite = poisonedPie;
         pie.SetText("poisoned_pie");
+        if (!berryPoisonedSoundPlayed) {
+            player.PlaySolvedSound();
+            berryPoisonedSoundPlayed = true;
+        }
     }
+
 
     void KillQueen()
     {
@@ -133,6 +140,10 @@ public class SentenceCoordinatorLevelOne : MonoBehaviour {
     void Beat_Level()
     {
         dentist.GetComponent<SpriteRenderer>().sprite = happyDentist;
+        if (!crownGivenSoundPlayed) {
+            player.PlaySolvedSound();
+            crownGivenSoundPlayed = true;
+        }
         crown.SetActive(false);
         oldText.SetActive(false);
         filter.SetActive(false);

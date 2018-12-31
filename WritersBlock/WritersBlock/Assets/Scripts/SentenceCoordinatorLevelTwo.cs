@@ -98,6 +98,7 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             block.SetActive(false);
             if (!blockRemoved) {
                 player.currentHint = hintChestLocked;
+                player.PlaySolvedSound();
             }
             blockRemoved = true;
             sentences[0].Lock();
@@ -125,6 +126,9 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
         if (this.sentences[2].GetWords()[0].Equals("key") && blockRemoved && !stickRemoved)
         {
             StartCoroutine(AnimateStickLeavingChest());
+            if (!stickRemoved) {
+                player.PlaySolvedSound();
+            }
             stickRemoved = true;
             player.currentHint = hintBreathTakeAway;
 
@@ -155,6 +159,9 @@ public class SentenceCoordinatorLevelTwo : MonoBehaviour
             ladWantsChewy.SetActive(false);
             gumSourceSentencePart1.SetActive(false);
             gumSourceSentencePart2.SetActive(false);
+            if (!helpedBoy) {
+                player.PlaySolvedSound();
+            }
             helpedBoy = true;
             BeatLevel();
             sentences[3].Lock();

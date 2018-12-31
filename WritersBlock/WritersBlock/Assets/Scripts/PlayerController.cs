@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     // Audio
     private AudioSource source;
     public AudioClip deathSound;
+    public AudioClip solvedSound;
     public AudioClip jumpSound;
     public AudioClip walkSound;
     public AudioClip backgroundSound;
@@ -172,7 +173,10 @@ public class PlayerController : MonoBehaviour {
 
     public void PlayDeathSound() {
         source.PlayOneShot(deathSound, 1.0f);
+    }
 
+    public void PlaySolvedSound() {
+        source.PlayOneShot(solvedSound, 1.0f);
     }
 
 }

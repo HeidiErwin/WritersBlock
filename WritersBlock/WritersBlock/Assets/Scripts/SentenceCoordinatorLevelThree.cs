@@ -90,6 +90,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     private bool ladDead = false;
     private bool ended = false;
     private bool ladDeathSoundPlayed = false;
+    private bool wizardOnBoard = false;
+    private bool cupGiven = false;
+
 
     private SentenceController[] sentences;
 
@@ -121,7 +124,6 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         }
         // Sentence One: "old"        
         if (this.sentences[0].GetWords()[0].Equals("old") && !ladDead) {
-           
             KillLad();
             sentences[0].Lock();
         }
@@ -136,6 +138,14 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         if (bookInAir && ladDead && handWizardCupSentence.GetWords()[0].Equals("cup") && !lemonadeConjured) {
             GiveWizardCup();
             handWizardCupSentence.Lock();
+        }
+
+        //play sound for handing wizard cup correctly
+        if (bookInAir && handWizardCupSentence.GetWords()[0].Equals("cup") && !cupGiven) {
+            player.PlaySolvedSound();
+            cupGiven = true;
+            handWizardCupSentence.Lock();
+
         }
 
         // Sentence Three: "block"
@@ -154,6 +164,10 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     }
 
     void DestroyBlockade() {
+        if (!blockadeDestroyed) {
+            player.PlaySolvedSound();
+        }
+
         blockadeDestroyed = true;
         GameObject.Find("Blockade").SetActive(false);
     }
@@ -201,6 +215,9 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
     }
 
     void MakeBookFloat() {
+        if (!bookInAir) {
+            player.PlaySolvedSound();
+        }
         bookInAir = true;
         floatingRecipeBook.SetActive(true);
         blankToHandWizardCup.SetActive(true);
@@ -209,7 +226,11 @@ public class SentenceCoordinatorLevelThree : MonoBehaviour {
         wizardNeedsCup.SetActive(true);
     }
 
-    void WizardConvinced() { //TODO
+    void WizardConvinced() {
+        if (!wizardOnBoard) {
+            player.PlaySolvedSound();
+            wizardOnBoard = true;
+        }
         okayText.SetActive(true);
         sorryText.SetActive(false);
         quotesBeforeSorry.SetActive(false);

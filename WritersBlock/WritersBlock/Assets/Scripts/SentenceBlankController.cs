@@ -43,33 +43,43 @@ public class SentenceBlankController : MonoBehaviour {
         }
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0) && !this.locked && (collision.GetComponent<WordDraggable>().OnSamePageAsPlayer || firstCheck))
-        {
-            if (word != null) // if there's already a word in the blank, knock it out to above the blank
-            {
-                word.transform.position = new Vector3(this.transform.position.x, 
+    public void OnTriggerStay2D(Collider2D collision) {
+        if (collision.gameObject.tag.Equals("Word") && !Input.GetMouseButton(0) && !this.locked && 
+            (collision.GetComponent<WordDraggable>().OnSamePageAsPlayer || firstCheck)) {
+            if (word != null) {
+                word.transform.position = new Vector3(this.transform.position.x,
                     this.transform.position.y + word.transform.GetComponent<SpriteRenderer>().bounds.size.y, word.transform.position.z);
-                this.word = null;
+                word = null;
             }
-           
+            
             WordController colliderWord = collision.transform.GetComponent<WordController>();
-            word = colliderWord;
-            word.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, word.transform.position.z);
-
-            if (word && !word.InSentence) {
+            if (colliderWord.numBlanksOver == 1) {
+                word = colliderWord;
                 word.InSentence = true;
-                if (GetComponent<SpriteRenderer>()) { // hide blank sprite
+                if (GetComponent<SpriteRenderer>()) {
                     GetComponent<SpriteRenderer>().enabled = false;
                 }
             }
-
+           
+            word.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, word.transform.position.z);
             this.size = word.transform.GetComponent<SpriteRenderer>().bounds.size.x;
             sentence.RealignWords();
-
         }
         firstCheck = false;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag.Equals("Word")) {
+            WordController colliderWord = collision.transform.GetComponent<WordController>();
+            colliderWord.numBlanksOver++;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject.tag.Equals("Word")) {
+            WordController colliderWord = collision.transform.GetComponent<WordController>();
+            colliderWord.numBlanksOver--;
+        }
     }
 
     public string GetText()

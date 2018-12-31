@@ -78,7 +78,7 @@ public class UIController : MonoBehaviour {
 		yield return new WaitForSeconds(1);
 		source.Stop();
 		source.PlayOneShot(levelTransitionSound, 0.5f);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.35f);
         SceneManager.LoadScene("Level1");
     }
 
